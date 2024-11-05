@@ -4,6 +4,14 @@ import Seo from "../components/seo";
 import "../styles/styles.css"
 
 const IndexPage = () => {
+  // Funkce pro přesun na sekci "companies"
+  const scrollToSection = () => {
+    const section = document.getElementById("companies")
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <main>
       <header>
@@ -21,23 +29,36 @@ const IndexPage = () => {
           {/* SVG prvky */}
           <div class="svg-container">
             <img src="/img/Domek-Final.svg" alt="Domek" class="domek" />
-            <img src="/img/okno1.svg" alt="Okno 1" class="okno1" />
-            <img src="/img/okno2.svg" alt="Okno 2" class="okno2" />
             <img src="/img/solary.svg" alt="Solary" class="solary" />
             <img src="/img/strom.svg" alt="Strom" class="strom" />
             <img src="/img/bagr.svg" alt="Bagr" class="bagr" />
             <img src="/img/kameny.svg" alt="Kameny" class="kameny" />
+            <img src="/img/okno1.svg" alt="Okno1" class="okno1" />
+            <img src="/img/okno2.svg" alt="Okno2" class="okno2" />
+            <img src="/img/dollar.svg" alt="Dollar" class="dollar" />
           </div>
           {/* Středový obsah s textem a tlačítkem vedle domku */}
           <div className="center-content">
             <h1>Najděte spolehlivé řemeslníky.</h1>
-            <button className="button">Hledat</button>
+            <button className="button" onClick={() => document.getElementById('second-section').scrollIntoView({ behavior: 'smooth' })}>
+              Hledat
+            </button>
           </div>
         </section>
       </Layout>
 
-      <section className="section background-section">
+      <section id="second-section" className="section background-section">
         {/* Druhá sekce s pozadím */}
+        <div class="svg-container2">
+          <img src="/img/Domek-Final.svg" alt="Domek" class="domek" />
+          <img src="/img/solary.svg" alt="Solary" class="solary" />
+          <img src="/img/strom.svg" alt="Strom" class="strom" />
+          <img src="/img/bagr.svg" alt="Bagr" class="bagr" />
+          <img src="/img/kameny.svg" alt="Kameny" class="kameny" />
+          <img src="/img/okno1.svg" alt="Okno1" class="okno1" />
+          <img src="/img/okno2.svg" alt="Okno2" class="okno2" />
+          <img src="/img/dollar.svg" alt="Dollar" class="dollar" />
+        </div>
       </section>
 
       {/* Druhá sekce */}

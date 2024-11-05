@@ -171,18 +171,27 @@ header {
 /* Styl pro okna */
 .okno1, .okno2 {
     position: absolute;
-    width: 100px; /* Zvětšení okna, upravte dle potřeby */
+    width: 400px; /* Zvětšení okna, upravte dle potřeby */
     height: auto;
 }
 
 /* Umístění levého okna */
 .okno1 {
-    left: 42%; /* Upravená pozice levého okna na domku */
-    bottom: 52%; /* Upravená výška levého okna na domku */
+    left: 54%; /* Upravená pozice levého okna na domku */
+    bottom: 20%; /* Upravená výška levého okna na domku */
 }
 
 /* Umístění pravého okna */
 .okno2 {
-    left: 54%; /* Upravená pozice pravého okna na domku */
-    bottom: 52%; /* Upravená výška pravého okna na domku */
+    left: 30%; /* Upravená pozice pravého okna na domku */
+    bottom: 17%; /* Upravená výška pravého okna na domku */
+}
+
+/* Styl pro dollar */
+.dollar {
+    position: absolute;
+    left: 70%; /* Pozice vedle domku, upravte podle potřeby */
+    bottom: -5%; /* Výška nad trávou, upravte podle potřeby */
+    width: 400px; /* Velikost dollaru, upravte podle potřeby */
+    height: auto;
 }
