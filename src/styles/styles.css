@@ -1,5 +1,6 @@
 /* Základní styl stránky */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -12,7 +13,8 @@ body, html {
 header {
     background-color: #333;
     color: white;
-    padding: 0; /* zvětšený horní a dolní padding */
+    padding: 0;
+    /* zvětšený horní a dolní padding */
     margin: 0;
     text-align: center;
 }
@@ -63,25 +65,33 @@ header {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin-left: calc((100% - 100vw) / 2); /* Zarovná sekci na střed */
-    padding-top: 60px; /* Posunutí obsahu dolů, aby byl viditelný pod navigační lištou */
-    margin-top: -33px; /* Posune sekci přímo pod navigaci */
+    margin-left: calc((100% - 100vw) / 2);
+    /* Zarovná sekci na střed */
+    padding-top: 60px;
+    /* Posunutí obsahu dolů, aby byl viditelný pod navigační lištou */
+    margin-top: -33px;
+    /* Posune sekci přímo pod navigaci */
 }
 
 /* Středový obsah s dalším posunem nahoru */
 .center-content {
     position: absolute;
-    bottom: 60%; /* Posun ještě více nahoru */
-    left: 20%; /* Zůstává více vlevo */
+    bottom: 35%;
+    /* Posun více dolů */
+    left: 20%;
+    /* Zarovnání více vlevo, pokud potřebujete */
     transform: translate(-50%, -50%);
     text-align: left;
     color: #000;
 }
 
 .center-content h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
+    /* Zvýšená velikost textu */
     font-weight: bold;
     margin: 0;
+    line-height: 1.2;
+    /* Upravte pro menší nebo větší mezeru mezi řádky */
 }
 
 .center-content .button {
@@ -111,9 +121,12 @@ header {
 /* Styl pro domek */
 .domek {
     position: absolute;
-    left: 35%; /* Posun doprava */
-    bottom: 23%; /* Posun více nahoru */
-    width: 1000px; /* Další zvětšení domku */
+    left: 35%;
+    /* Posun doprava */
+    bottom: 23%;
+    /* Posun více nahoru */
+    width: 1000px;
+    /* Další zvětšení domku */
     height: auto;
 }
 
@@ -147,9 +160,12 @@ header {
 /* Styl pro stromek */
 .strom {
     position: absolute;
-    left: 15%; /* Posun doprava vedle domku */
-    bottom: 10%; /* Upravte, aby byl ve stejné výšce jako domek */
-    width: 600px; /* Zvýšení velikosti stromku */
+    left: 15%;
+    /* Posun doprava vedle domku */
+    bottom: 10%;
+    /* Upravte, aby byl ve stejné výšce jako domek */
+    width: 600px;
+    /* Zvýšení velikosti stromku */
     height: auto;
 }
 
@@ -169,29 +185,383 @@ header {
 }
 
 /* Styl pro okna */
-.okno1, .okno2 {
+.okno1,
+.okno2 {
     position: absolute;
-    width: 400px; /* Zvětšení okna, upravte dle potřeby */
+    width: 400px;
+    /* Zvětšení okna, upravte dle potřeby */
     height: auto;
 }
 
 /* Umístění levého okna */
 .okno1 {
-    left: 54%; /* Upravená pozice levého okna na domku */
-    bottom: 20%; /* Upravená výška levého okna na domku */
+    left: 54%;
+    /* Upravená pozice levého okna na domku */
+    bottom: 20%;
+    /* Upravená výška levého okna na domku */
 }
 
 /* Umístění pravého okna */
 .okno2 {
-    left: 30%; /* Upravená pozice pravého okna na domku */
-    bottom: 17%; /* Upravená výška pravého okna na domku */
+    left: 30%;
+    /* Upravená pozice pravého okna na domku */
+    bottom: 17%;
+    /* Upravená výška pravého okna na domku */
 }
 
 /* Styl pro dollar */
 .dollar {
     position: absolute;
-    left: 70%; /* Pozice vedle domku, upravte podle potřeby */
-    bottom: -5%; /* Výška nad trávou, upravte podle potřeby */
-    width: 400px; /* Velikost dollaru, upravte podle potřeby */
+    left: 70%;
+    /* Pozice vedle domku, upravte podle potřeby */
+    bottom: -5%;
+    /* Výška nad trávou, upravte podle potřeby */
+    width: 400px;
+    /* Velikost dollaru, upravte podle potřeby */
     height: auto;
+}
+
+
+/* Styl pro nadpis sekce firem */
+.company-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: left;
+    /* Zarovná nadpis doleva */
+    margin-left: 20px;
+    /* Přidá odsazení vlevo, upravte podle potřeby */
+    margin-bottom: 30px;
+    color: #333;
+    /* Barva nadpisu */
+}
+
+
+/* Styl pro sekci firem */
+.company-list {
+    padding: 50px 20px;
+    background-color: #fdfaf5;
+    /* Světle krémové pozadí */
+    color: #333;
+    /* Barva textu */
+}
+
+/* Styl pro kontejnery sloupců */
+.company-columns {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    margin-top: 50px;
+    /* Přidá horní odsazení pro posunutí textu firem dolů */
+}
+
+/* Styl pro kontejnery sloupců */
+.company-columns {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    margin-top: 200px;
+    /* Zvýšené horní odsazení pro výraznější posunutí dolů */
+}
+
+
+/* Styl pro každou položku firmy */
+.company-item {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: left;
+    /* Zarovnání textu doleva */
+    margin: 20px 0;
+    /* Zvýšený odstup mezi položkami */
+    padding-top: 10px;
+    /* Menší prostor nad textem pro čáru */
+    color: #555;
+    position: relative;
+    padding-left: 30px;
+    /* Odsazení textu pro lepší zarovnání s čárou */
+}
+
+/* Dekorativní čára nad každou firmou */
+.company-item::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    /* Délka čáry */
+    height: 2px;
+    /* Tloušťka čáry */
+    background-color: #333;
+    top: 0;
+    /* Čára těsně nad textem */
+    left: 30px;
+    /* Zarovnání čáry s textem */
+}
+
+/* Styl pro sekci O NÁS */
+.about-section {
+    background-color: #333;
+    /* Tmavší pozadí pro sekci */
+    color: #fff;
+    /* Světlejší text pro lepší čitelnost */
+    padding: 200px 20px;
+    display: flex;
+    justify-content: center;
+    /* Posunout obsah do středu stránky */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    /* Zvýšená mezera mezi textem a obrázkem */
+    max-width: 1000px;
+    /* Omezení šířky kontejneru, aby byl blíže středu */
+}
+
+.about-text {
+    max-width: 500px;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-right: 80px;
+    /* Zvýšená mezera mezi textem a obrázkem */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+    /* Bílá barva nadpisu */
+}
+
+.about-image {
+    width: 500px;
+    /* Nastavení pevné šířky */
+    height: 500px;
+    /* Nastavení pevné výšky, aby vytvořila čtverec */
+    object-fit: cover;
+    /* Zajištění, že obrázek se správně ořízne a nezdeformuje */
+    border-radius: 10px;
+    /* Lehce zaoblené rohy */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Jemný stín pro obrázek */
+}
+
+.projects-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 100px 20px;
+}
+
+.projects-container {
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    /* Šířka kontejneru */
+    gap: 50px;
+}
+
+.projects-image {
+    width: 60%;
+    /* Rozšíření obrázku přes větší část sekce */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.projects-text {
+    max-width: 40%;
+    /* Zmenšení textové části pro vyvážení s obrázkem */
+}
+
+.projects-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.projects-text hr {
+    width: 50px;
+    border: none;
+    border-top: 2px solid #fff;
+    margin-bottom: 30px;
+}
+
+.projects-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.projects-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Mezera mezi čárou a textem */
+}
+
+.projects-item hr {
+    flex: 0 0 50px;
+    /* Pevná délka čáry */
+    border: none;
+    border-top: 2px solid #fff;
+    margin: 0;
+}
+
+.projects-item p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #fff;
+}
+
+
+.projects-item hr {
+    width: 30px;
+    /* Délka čáry */
+    height: 2px;
+    background-color: #fff;
+    margin: 0;
+}
+
+.projects-item p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.projects-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.projects-column p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Styl pro sekci Realizace */
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    /* Zvýšené horní odsazení pro celkový posun sekce */
+    text-align: center;
+    background-color: #333;
+}
+
+.realizations-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 60px;
+    /* Větší mezera mezi nadpisem a obrázky */
+}
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    /* Vycentrování projektů pod nadpisem */
+    gap: 20px;
+}
+
+.project-item {
+    position: relative;
+    width: 30%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 60%);
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.project-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.project-info p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+}
+
+/* Styly pro sekci kontakt */
+.contact-section {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center; /* Zarovná text do středu */
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-image {
+    width: 100%; /* Zabere celou šířku sekce */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 30px; /* Odstup mezi obrázkem a textem */
+    object-fit: cover; /* Přizpůsobí obsah pro plné zobrazení bez deformace */
+}
+
+
+.contact-info {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
 }

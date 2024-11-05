@@ -19,7 +19,7 @@ const IndexPage = () => {
           <li><a href="#home">Domů</a></li>
           <li><a href="#companies">Firmy</a></li>
           <li><a href="#about">O nás</a></li>
-          <li><a href="#projects">Realizace</a></li>
+          <li><a href="#realizations">Realizace</a></li>
           <li><a href="#contact">Kontakt</a></li>
         </ul>
       </header>
@@ -39,7 +39,7 @@ const IndexPage = () => {
           </div>
           {/* Středový obsah s textem a tlačítkem vedle domku */}
           <div className="center-content">
-            <h1>Najděte spolehlivé řemeslníky.</h1>
+            <h1>Najděte<br />spolehlivé<br />řemeslníky.</h1>
             <button className="button" onClick={() => document.getElementById('second-section').scrollIntoView({ behavior: 'smooth' })}>
               Hledat
             </button>
@@ -63,25 +63,26 @@ const IndexPage = () => {
 
       {/* Druhá sekce */}
       <section id="companies" className="section company-list">
-        <h2>SEZNAM FIREM</h2>
+        <h2 className="company-heading">SEZNAM FIREM</h2>
         <div className="company-columns">
           <div className="company-column">
-            <p>Černý stavební s.r.o.</p>
-            <p>RS WoodWorks</p>
-            <p>Dlaždičkáři s.r.o.</p>
+            <div className="company-item">Černý stavební s.r.o.</div>
+            <div className="company-item">RS WoodWorks</div>
+            <div className="company-item">Dlaždičkáři s.r.o.</div>
           </div>
           <div className="company-column">
-            <p>Pepa</p>
-            <p>Jakub Eliáš</p>
-            <p>Mlok System</p>
+            <div className="company-item">Pepa</div>
+            <div className="company-item">Jakub Eliáš</div>
+            <div className="company-item">Mlok System</div>
           </div>
           <div className="company-column">
-            <p>XY</p>
-            <p>XY</p>
-            <p>XY</p>
+            <div className="company-item">XY</div>
+            <div className="company-item">XY</div>
+            <div className="company-item">XY</div>
           </div>
         </div>
       </section>
+
 
       {/* Třetí sekce */}
       <section id="about" className="section about-section">
@@ -89,79 +90,84 @@ const IndexPage = () => {
           <h2>O NÁS</h2>
           <p>Use this page to share your company's mission, vision, or background with your potential clients. Set yourself apart from your competition with a strong brand persona that cares for your clients.</p>
         </div>
-        <img src="/img/about-image.jpg" alt="O nás" className="about-image" />
+        <img src="/img/Onas.png" alt="O nás" className="about-image" />
       </section>
 
       {/* Čtvrtá sekce */}
-      <section id="projects" className="section">
-        <img src="/img/reasons-image.jpg" alt="Proč využít Domov Snadno" className="reasons-image" />
-        <div className="reasons-text">
-          <h2>PROČ VYUŽÍT DOMOV SNADNO?</h2>
-          <div className="reasons-list">
-            <p>Známe se. A spolupracujeme spolu na projektech</p>
-            <p>Dokážeme se domluvit a tím ušetřit Váš čas.</p>
-            <p>Jsme odborníky v našich oborech.</p>
-            <p>Všechny projekty řešíme s důrazem na kvalitu provedení a design.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Pátá sekce */}
-      <section id="realizations" className="section projects-section">
-        <h2>Realizace</h2>
-        <div className="project-list">
-          <div className="project-item">
-            <img src="/img/project1.jpg" alt="Rodinný dům Třemošná" />
-            <div className="project-info">
-              <h3>Rodinný dům Třemošná</h3>
-              <p>Realizace 2023</p>
-            </div>
-          </div>
-          <div className="project-item">
-            <img src="/img/project2.jpg" alt="Rodinný dům Šťáhlavy" />
-            <div className="project-info">
-              <h3>Rodinný dům Šťáhlavy</h3>
-              <p>Realizace 2024</p>
-            </div>
-          </div>
-          <div className="project-item">
-            <img src="/img/project3.jpg" alt="Rodinný dům Plzeň Doubravka" />
-            <div className="project-info">
-              <h3>Rodinný dům Plzeň Doubravka</h3>
-              <p>Realizace 2024</p>
+      <section id="projects" className="section projects-section">
+        <div className="projects-container">
+          <img src="/img/ProcVyuzitDomovSnadno.png" alt="Proč využít Domov Snadno" className="projects-image" />
+          <div className="projects-text">
+            <h2>PROČ VYUŽÍT DOMOV SNADNO?</h2>
+            <hr />
+            <div className="projects-list">
+              <div className="projects-column">
+                <p>Známe se.<br />A spolupracujeme spolu na projektech</p>
+                <p>Jsme odborníky v našich oborech.</p>
+              </div>
+              <div className="projects-column">
+                <p>Dokážeme se domluvit<br />a tím ušetřit Váš čas.</p>
+                <p>Všechny projekty řešíme s důrazem na kvalitu provedení a design.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Šestá sekce */}
-      <section id="contact" className="section contact-section">
-        <div className="contact-buttons">
-          <button className="contact-btn">SEZNAM FIREM</button>
-          <button className="contact-btn">PROJEKTY</button>
-        </div>
-        <div className="contact-content">
-          <img src="/img/contact-image.jpg" alt="Kontaktujte nás" className="contact-image" />
-          <div className="contact-info">
-            <h2>KONTAKTUJTE NÁS</h2>
-            <div className="contact-details">
-              <div>
-                <p><strong>Hlavní kontakt</strong></p>
-              </div>
-              <div>
-                <p>Tel: (123) 456-7890</p>
-                <p>Email: info@domovsnadno.cz</p>
-                <p>Social: @domovsnadno</p>
-              </div>
-            </div>
-            <div className="social-icons">
-              <a href="#"><img src="/img/facebook-icon.png" alt="Facebook" /></a>
-              <a href="#"><img src="/img/twitter-icon.png" alt="Twitter" /></a>
-              <a href="#"><img src="/img/instagram-icon.png" alt="Instagram" /></a>
-            </div>
-          </div>
-        </div>
-      </section>
+
+
+
+{/* Pátá sekce */}
+<section id="realizations" className="section projects-section">
+  <h2 className="realizations-heading">Realizace</h2>
+  <div className="project-list">
+    <div className="project-item">
+      <img src="/img/RealizaceRodinneDomy1.png" alt="Rodinný dům Třemošná" className="project-image" />
+      <div className="project-info">
+        <h3>Rodinný dům Třemošná</h3>
+        <p>Realizace 2023</p>
+      </div>
+    </div>
+    <div className="project-item">
+      <img src="/img/RealizaceRodinneDomy2.png" alt="Rodinný dům Šťáhlavy" className="project-image" />
+      <div className="project-info">
+        <h3>Rodinný dům Šťáhlavy</h3>
+        <p>Realizace 2024</p>
+      </div>
+    </div>
+    <div className="project-item">
+      <img src="/img/RealizaceRodinneDomy3.png" alt="Rodinný dům Plzeň Doubravka" className="project-image" />
+      <div className="project-info">
+        <h3>Rodinný dům Plzeň Doubravka</h3>
+        <p>Realizace 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{/* Šestá sekce */}
+<section id="contact" className="section contact-section">
+  <div className="contact-container">
+    <img src="/img/KontaktujteNas.png" alt="Kontaktujte nás" className="contact-image" />
+    <div className="contact-info">
+      <h2 className="contact-heading">KONTAKTUJTE NÁS</h2>
+      <div className="contact-details">
+        <p><strong>Hlavní kontakt</strong></p>
+        <p>Tel: (123) 456-7890</p>
+        <p>Email: info@domovsnadno.cz</p>
+        <p>Social: @domovsnadno</p>
+      </div>
+      <div className="social-icons">
+        <a href="#"><img src="/img/facebook-icon.png" alt="Facebook" /></a>
+        <a href="#"><img src="/img/twitter-icon.png" alt="Twitter" /></a>
+        <a href="#"><img src="/img/instagram-icon.png" alt="Instagram" /></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     </main>
   )
