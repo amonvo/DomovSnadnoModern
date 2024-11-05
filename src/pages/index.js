@@ -1,128 +1,148 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import "../styles/styles.css"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+const IndexPage = () => {
+  return (
+    <main>
+      <header>
+        <ul className="navbar">
+          <li><a href="#home">Domů</a></li>
+          <li><a href="#companies">Firmy</a></li>
+          <li><a href="#about">O nás</a></li>
+          <li><a href="#projects">Realizace</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </header>
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
+      <Layout>
+    <section id="home" className="section background-section">
+        {/* Středový obsah první sekce */}
+        <div className="center-content">
+            <h1>Najděte spolehlivé řemeslníky.</h1>
+            <button className="button">Hledat</button>
+        </div>
+        {/* SVG prvky */}
+        <div className="svg-container">
+            <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
+            <img src="/img/solary.svg" alt="Solary" className="solary" />
+            <img src="/img/strom.svg" alt="Strom" className="strom" />
+            <img src="/img/bagr.svg" alt="Bagr" className="bagr" />
+            <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
+        </div>
+    </section>
+</Layout>
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
 
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
+      <section className="section background-section">
+        {/* Druhá sekce s pozadím */}
+      </section>
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+      {/* Druhá sekce */}
+      <section id="companies" className="section company-list">
+        <h2>SEZNAM FIREM</h2>
+        <div className="company-columns">
+          <div className="company-column">
+            <p>Černý stavební s.r.o.</p>
+            <p>RS WoodWorks</p>
+            <p>Dlaždičkáři s.r.o.</p>
+          </div>
+          <div className="company-column">
+            <p>Pepa</p>
+            <p>Jakub Eliáš</p>
+            <p>Mlok System</p>
+          </div>
+          <div className="company-column">
+            <p>XY</p>
+            <p>XY</p>
+            <p>XY</p>
+          </div>
+        </div>
+      </section>
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+      {/* Třetí sekce */}
+      <section id="about" className="section about-section">
+        <div className="about-text">
+          <h2>O NÁS</h2>
+          <p>Use this page to share your company's mission, vision, or background with your potential clients. Set yourself apart from your competition with a strong brand persona that cares for your clients.</p>
+        </div>
+        <img src="/img/about-image.jpg" alt="O nás" className="about-image" />
+      </section>
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+      {/* Čtvrtá sekce */}
+      <section id="projects" className="section">
+        <img src="/img/reasons-image.jpg" alt="Proč využít Domov Snadno" className="reasons-image" />
+        <div className="reasons-text">
+          <h2>PROČ VYUŽÍT DOMOV SNADNO?</h2>
+          <div className="reasons-list">
+            <p>Známe se. A spolupracujeme spolu na projektech</p>
+            <p>Dokážeme se domluvit a tím ušetřit Váš čas.</p>
+            <p>Jsme odborníky v našich oborech.</p>
+            <p>Všechny projekty řešíme s důrazem na kvalitu provedení a design.</p>
+          </div>
+        </div>
+      </section>
 
+      {/* Pátá sekce */}
+      <section id="realizations" className="section projects-section">
+        <h2>Realizace</h2>
+        <div className="project-list">
+          <div className="project-item">
+            <img src="/img/project1.jpg" alt="Rodinný dům Třemošná" />
+            <div className="project-info">
+              <h3>Rodinný dům Třemošná</h3>
+              <p>Realizace 2023</p>
+            </div>
+          </div>
+          <div className="project-item">
+            <img src="/img/project2.jpg" alt="Rodinný dům Šťáhlavy" />
+            <div className="project-info">
+              <h3>Rodinný dům Šťáhlavy</h3>
+              <p>Realizace 2024</p>
+            </div>
+          </div>
+          <div className="project-item">
+            <img src="/img/project3.jpg" alt="Rodinný dům Plzeň Doubravka" />
+            <div className="project-info">
+              <h3>Rodinný dům Plzeň Doubravka</h3>
+              <p>Realizace 2024</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Šestá sekce */}
+      <section id="contact" className="section contact-section">
+        <div className="contact-buttons">
+          <button className="contact-btn">SEZNAM FIREM</button>
+          <button className="contact-btn">PROJEKTY</button>
+        </div>
+        <div className="contact-content">
+          <img src="/img/contact-image.jpg" alt="Kontaktujte nás" className="contact-image" />
+          <div className="contact-info">
+            <h2>KONTAKTUJTE NÁS</h2>
+            <div className="contact-details">
+              <div>
+                <p><strong>Hlavní kontakt</strong></p>
+              </div>
+              <div>
+                <p>Tel: (123) 456-7890</p>
+                <p>Email: info@domovsnadno.cz</p>
+                <p>Social: @domovsnadno</p>
+              </div>
+            </div>
+            <div className="social-icons">
+              <a href="#"><img src="/img/facebook-icon.png" alt="Facebook" /></a>
+              <a href="#"><img src="/img/twitter-icon.png" alt="Twitter" /></a>
+              <a href="#"><img src="/img/instagram-icon.png" alt="Instagram" /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  )
+}
+export const Head = () => <Seo title="Domov Snadno" />;
 export default IndexPage

@@ -1,0 +1,148 @@
+/* Základní styl stránky */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Styl navigační lišty */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ddd;
+}
+
+/* Styl pro sekci */
+.section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Styl pro první sekci */
+.background-section {
+    width: 100vw;
+    min-width: 100%;
+    height: 100vh;
+    background-image: url("/img/WebAnimace.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: calc((100% - 100vw) / 2); /* Zarovná sekci na střed */
+    padding-top: 60px; /* Posunutí obsahu dolů, aby byl viditelný pod navigační lištou */
+}
+
+
+/* Středový obsah */
+.center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.center-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.center-content .button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.center-content .button:hover {
+    background-color: #555;
+}
+
+/* Kontejner pro SVG prvky */
+.svg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Styl pro jednotlivé SVG objekty */
+.domek {
+    position: absolute;
+    left: 30%;
+    bottom: 10%;
+    width: 200px;
+}
+
+.solary {
+    position: absolute;
+    left: 50%;
+    bottom: 20%;
+    width: 100px;
+}
+
+.strom {
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
+    width: 150px;
+}
+
+.bagr {
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    width: 120px;
+}
+
+.kameny {
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+    width: 100px;
+}
