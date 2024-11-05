@@ -68,31 +68,30 @@ header {
     margin-top: -33px; /* Posune sekci přímo pod navigaci */
 }
 
-/* Středový obsah */
+/* Středový obsah s dalším posunem nahoru */
 .center-content {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    bottom: 60%; /* Posun ještě více nahoru */
+    left: 20%; /* Zůstává více vlevo */
     transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 10;
-}
-
-.center-content h1 {
-    font-size: 3rem;
-    font-weight: bold;
+    text-align: left;
     color: #000;
 }
 
+.center-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
 .center-content .button {
-    margin-top: 20px;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    color: #fff;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
     background-color: #333;
+    color: #fff;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .center-content .button:hover {
@@ -109,38 +108,81 @@ header {
     z-index: 0;
 }
 
-/* Styl pro jednotlivé SVG objekty */
+/* Styl pro domek */
 .domek {
     position: absolute;
-    left: 30%;
-    bottom: 10%;
-    width: 200px;
+    left: 35%; /* Posun doprava */
+    bottom: 23%; /* Posun více nahoru */
+    width: 1000px; /* Další zvětšení domku */
+    height: auto;
+}
+
+.text-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text-container .button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.text-container .button:hover {
+    background-color: #555;
 }
 
 .solary {
     position: absolute;
-    left: 50%;
-    bottom: 20%;
-    width: 100px;
+    left: 62%;
+    bottom: 27%;
+    width: 500px;
 }
 
+/* Styl pro stromek */
 .strom {
     position: absolute;
-    left: 10%;
-    bottom: 20%;
-    width: 150px;
+    left: 15%; /* Posun doprava vedle domku */
+    bottom: 10%; /* Upravte, aby byl ve stejné výšce jako domek */
+    width: 600px; /* Zvýšení velikosti stromku */
+    height: auto;
 }
+
 
 .bagr {
     position: absolute;
-    left: 5%;
-    bottom: 5%;
-    width: 120px;
+    left: 15%;
+    bottom: -5%;
+    width: 500px;
 }
 
 .kameny {
     position: absolute;
-    left: 30%;
+    left: 53%;
     bottom: 0;
-    width: 100px;
+    width: 303px;
+}
+
+/* Styl pro okna */
+.okno1, .okno2 {
+    position: absolute;
+    width: 100px; /* Zvětšení okna, upravte dle potřeby */
+    height: auto;
+}
+
+/* Umístění levého okna */
+.okno1 {
+    left: 42%; /* Upravená pozice levého okna na domku */
+    bottom: 52%; /* Upravená výška levého okna na domku */
+}
+
+/* Umístění pravého okna */
+.okno2 {
+    left: 54%; /* Upravená pozice pravého okna na domku */
+    bottom: 52%; /* Upravená výška pravého okna na domku */
 }

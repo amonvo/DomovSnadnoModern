@@ -15,14 +15,14 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer
+        {/* <footer
           style={{
             marginTop: `var(--space-5)`,
             fontSize: `var(--font-sm)`,
           }}
         >
           © {new Date().getFullYear()} Domov Snadno
-        </footer>
+        </footer> */}
       </div>
     </>
   )

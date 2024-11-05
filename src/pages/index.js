@@ -18,21 +18,24 @@ const IndexPage = () => {
 
       <Layout>
         <section id="home" className="section background-section">
-          {/* Středový obsah první sekce */}
+          {/* SVG prvky */}
+          <div class="svg-container">
+            <img src="/img/Domek-Final.svg" alt="Domek" class="domek" />
+            <img src="/img/okno1.svg" alt="Okno 1" class="okno1" />
+            <img src="/img/okno2.svg" alt="Okno 2" class="okno2" />
+            <img src="/img/solary.svg" alt="Solary" class="solary" />
+            <img src="/img/strom.svg" alt="Strom" class="strom" />
+            <img src="/img/bagr.svg" alt="Bagr" class="bagr" />
+            <img src="/img/kameny.svg" alt="Kameny" class="kameny" />
+          </div>
+          {/* Středový obsah s textem a tlačítkem vedle domku */}
           <div className="center-content">
             <h1>Najděte spolehlivé řemeslníky.</h1>
             <button className="button">Hledat</button>
           </div>
-          {/* SVG prvky */}
-          <div className="svg-container">
-            <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
-            <img src="/img/solary.svg" alt="Solary" className="solary" />
-            <img src="/img/strom.svg" alt="Strom" className="strom" />
-            <img src="/img/bagr.svg" alt="Bagr" className="bagr" />
-            <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
-          </div>
         </section>
       </Layout>
+
       <section className="section background-section">
         {/* Druhá sekce s pozadím */}
       </section>
