@@ -17,24 +17,22 @@ const IndexPage = () => {
       </header>
 
       <Layout>
-    <section id="home" className="section background-section">
-        {/* Středový obsah první sekce */}
-        <div className="center-content">
+        <section id="home" className="section background-section">
+          {/* Středový obsah první sekce */}
+          <div className="center-content">
             <h1>Najděte spolehlivé řemeslníky.</h1>
             <button className="button">Hledat</button>
-        </div>
-        {/* SVG prvky */}
-        <div className="svg-container">
+          </div>
+          {/* SVG prvky */}
+          <div className="svg-container">
             <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
             <img src="/img/solary.svg" alt="Solary" className="solary" />
             <img src="/img/strom.svg" alt="Strom" className="strom" />
             <img src="/img/bagr.svg" alt="Bagr" className="bagr" />
             <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
-        </div>
-    </section>
-</Layout>
-
-
+          </div>
+        </section>
+      </Layout>
       <section className="section background-section">
         {/* Druhá sekce s pozadím */}
       </section>
