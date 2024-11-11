@@ -1,6 +1,6 @@
 import * as React from "react"
-import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 import "../styles/styles.css"
 
 const IndexPage = () => {
@@ -12,15 +12,54 @@ const IndexPage = () => {
     }
   }
 
+  const scrollToTop = () => {
+    const section = document.getElementById("home");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  
+
+  // Zobrazení tlačítka při posunutí dolů
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const btn = document.getElementById("scrollToTopBtn");
+      const firstSection = document.getElementById("home");
+      const firstSectionHeight = firstSection.offsetHeight;
+      
+      // Podmínka pro zobrazení tlačítka
+      if (window.scrollY > firstSectionHeight - 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
+  
+  
   return (
     <main>
       <header>
         <ul className="navbar">
-          <li><a href="#home">Domů</a></li>
-          <li><a href="#companies">Firmy</a></li>
-          <li><a href="#about">O nás</a></li>
-          <li><a href="#realizations">Realizace</a></li>
-          <li><a href="#contact">Kontakt</a></li>
+          <li>
+            <a href="#home">Domů</a>
+          </li>
+          <li>
+            <a href="#companies">Firmy</a>
+          </li>
+          <li>
+            <a href="#about">O nás</a>
+          </li>
+          <li>
+            <a href="#realizations">Realizace</a>
+          </li>
+          <li>
+            <a href="#contact">Kontakt</a>
+          </li>
         </ul>
       </header>
 
@@ -39,8 +78,21 @@ const IndexPage = () => {
           </div>
           {/* Středový obsah s textem a tlačítkem vedle domku */}
           <div className="center-content">
-            <h1>Najděte<br />spolehlivé<br />řemeslníky.</h1>
-            <button className="button" onClick={() => document.getElementById('second-section').scrollIntoView({ behavior: 'smooth' })}>
+            <h1>
+              Najděte
+              <br />
+              spolehlivé
+              <br />
+              řemeslníky.
+            </h1>
+            <button
+              className="button"
+              onClick={() =>
+                document
+                  .getElementById("second-section")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+            >
               Hledat
             </button>
           </div>
@@ -83,12 +135,16 @@ const IndexPage = () => {
         </div>
       </section>
 
-
       {/* Třetí sekce */}
       <section id="about" className="section about-section">
         <div className="about-text">
           <h2>O NÁS</h2>
-          <p>Use this page to share your company's mission, vision, or background with your potential clients. Set yourself apart from your competition with a strong brand persona that cares for your clients.</p>
+          <p>
+            Spojujeme firmy, jež sdílejí nejen vzájemnou podporu a spolupráci,
+            ale i skutečnou vášeň pro svou práci. Naším cílem je vytvářet
+            prostor, kde se kvalitní služby potkávají s odborností a nasazením,
+            které posouvají každodenní spolupráci na novou úroveň.
+          </p>
         </div>
         <img src="/img/Onas.png" alt="O nás" className="about-image" />
       </section>
@@ -96,81 +152,127 @@ const IndexPage = () => {
       {/* Čtvrtá sekce */}
       <section id="projects" className="section projects-section">
         <div className="projects-container">
-          <img src="/img/ProcVyuzitDomovSnadno.png" alt="Proč využít Domov Snadno" className="projects-image" />
+          <img
+            src="/img/ProcVyuzitDomovSnadno.png"
+            alt="Proč využít Domov Snadno"
+            className="projects-image"
+          />
           <div className="projects-text">
             <h2>PROČ VYUŽÍT DOMOV SNADNO?</h2>
             <hr />
             <div className="projects-list">
               <div className="projects-column">
-                <p>Známe se.<br />A spolupracujeme spolu na projektech</p>
+                <p>
+                  Známe se.
+                  <br />A spolupracujeme spolu na projektech
+                </p>
                 <p>Jsme odborníky v našich oborech.</p>
               </div>
               <div className="projects-column">
-                <p>Dokážeme se domluvit<br />a tím ušetřit Váš čas.</p>
-                <p>Všechny projekty řešíme s důrazem na kvalitu provedení a design.</p>
+                <p>
+                  Dokážeme se domluvit
+                  <br />a tím ušetřit Váš čas.
+                </p>
+                <p>
+                  Všechny projekty řešíme s důrazem na kvalitu provedení a
+                  design.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Pátá sekce */}
+      <section id="realizations" className="section projects-section">
+        <h2 className="realizations-heading">Realizace</h2>
+        <div className="project-list">
+          <div className="project-item">
+            <img
+              src="/img/RealizaceRodinneDomy1.png"
+              alt="Rodinný dům Třemošná"
+              className="project-image"
+            />
+            <div className="project-info">
+              <h3>Rodinný dům Třemošná</h3>
+              <p>Realizace 2023</p>
+            </div>
+          </div>
+          <div className="project-item">
+            <img
+              src="/img/RealizaceRodinneDomy2.png"
+              alt="Rodinný dům Šťáhlavy"
+              className="project-image"
+            />
+            <div className="project-info">
+              <h3>Rodinný dům Šťáhlavy</h3>
+              <p>Realizace 2024</p>
+            </div>
+          </div>
+          <div className="project-item">
+            <img
+              src="/img/RealizaceRodinneDomy3.png"
+              alt="Rodinný dům Plzeň Doubravka"
+              className="project-image"
+            />
+            <div className="project-info">
+              <h3>Rodinný dům Plzeň Doubravka</h3>
+              <p>Realizace 2024</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-
-
-{/* Pátá sekce */}
-<section id="realizations" className="section projects-section">
-  <h2 className="realizations-heading">Realizace</h2>
-  <div className="project-list">
-    <div className="project-item">
-      <img src="/img/RealizaceRodinneDomy1.png" alt="Rodinný dům Třemošná" className="project-image" />
-      <div className="project-info">
-        <h3>Rodinný dům Třemošná</h3>
-        <p>Realizace 2023</p>
-      </div>
-    </div>
-    <div className="project-item">
-      <img src="/img/RealizaceRodinneDomy2.png" alt="Rodinný dům Šťáhlavy" className="project-image" />
-      <div className="project-info">
-        <h3>Rodinný dům Šťáhlavy</h3>
-        <p>Realizace 2024</p>
-      </div>
-    </div>
-    <div className="project-item">
-      <img src="/img/RealizaceRodinneDomy3.png" alt="Rodinný dům Plzeň Doubravka" className="project-image" />
-      <div className="project-info">
-        <h3>Rodinný dům Plzeň Doubravka</h3>
-        <p>Realizace 2024</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-{/* Šestá sekce */}
-<section id="contact" className="section contact-section">
-  <div className="contact-container">
-    <img src="/img/KontaktujteNas.png" alt="Kontaktujte nás" className="contact-image" />
-    <div className="contact-info">
-      <h2 className="contact-heading">KONTAKTUJTE NÁS</h2>
-      <div className="contact-details">
-        <p><strong>Hlavní kontakt</strong></p>
-        <p>Tel: (123) 456-7890</p>
-        <p>Email: info@domovsnadno.cz</p>
-        <p>Social: @domovsnadno</p>
-      </div>
-      <div className="social-icons">
-        <a href="#"><img src="/img/facebook-icon.png" alt="Facebook" /></a>
-        <a href="#"><img src="/img/twitter-icon.png" alt="Twitter" /></a>
-        <a href="#"><img src="/img/instagram-icon.png" alt="Instagram" /></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
+      {/* Šestá sekce */}
+      <section id="contact" className="section contact-section">
+        <div className="contact-container">
+          <img
+            src="/img/KontaktujteNas.png"
+            alt="Kontaktujte nás"
+            className="contact-image"
+          />
+          <div className="contact-info">
+            <h2 className="contact-heading">KONTAKTUJTE NÁS</h2>
+            <div className="contact-details">
+              <p>
+                <strong>Hlavní kontakt</strong>
+              </p>
+              <p>Tel: (123) 456-7890</p>
+              <p>Email: info@domovsnadno.cz</p>
+              <p>Social: @domovsnadno</p>
+            </div>
+            <div className="social-icons">
+              <a href="#">
+                <img
+                  src="/img/facebook_Ikona.png"
+                  alt="Facebook"
+                  className="social-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="/img/twitter_Ikona.png"
+                  alt="Twitter"
+                  className="social-icon twitter-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="/img/instagram_Ikona.png"
+                  alt="Instagram"
+                  className="social-icon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Tlačítko pro posun nahoru */}
+      <button onClick={scrollToTop} id="scrollToTopBtn" title="Nahoru">
+        <img src="/img/tlacitkoZpet.png" alt="Nahoru" className="scroll-icon" />
+      </button>
     </main>
   )
 }
-export const Head = () => <Seo title="Domov Snadno" />;
+export const Head = () => <Seo title="Domov Snadno" />
 export default IndexPage

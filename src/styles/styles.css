@@ -556,12 +556,57 @@ header {
 }
 
 .social-icons img {
-    width: 30px;
-    height: 30px;
-    filter: brightness(0) invert(1);
-    transition: transform 0.3s ease;
+    width: 32px; /* Základní velikost pro všechny ikony */
+    height: 32px;
+    margin: 0 10px;
+    transition: transform 0.3s;
 }
 
 .social-icons img:hover {
     transform: scale(1.1);
+}
+
+.twitter-icon {
+    width: 24px; /* Výraznější zmenšení pro Twitter ikonu */
+    height: 24px;
+}
+
+#scrollToTopBtn {
+    display: block; /* Tlačítko je vždy viditelné */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#scrollToTopBtn img {
+    width: 24px;
+    height: 24px;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+
+#scrollToTopBtn.visible {
+    display: block; /* Zobrazí tlačítko */
+}
+
+
+#scrollToTopBtn img {
+    width: 24px;
+    height: 24px;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
 }
