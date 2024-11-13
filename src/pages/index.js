@@ -18,7 +18,7 @@ const IndexPage = () => {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
-  
+
 
   // Zobrazení tlačítka při posunutí dolů
   React.useEffect(() => {
@@ -26,7 +26,7 @@ const IndexPage = () => {
       const btn = document.getElementById("scrollToTopBtn");
       const firstSection = document.getElementById("home");
       const firstSectionHeight = firstSection.offsetHeight;
-      
+
       // Podmínka pro zobrazení tlačítka
       if (window.scrollY > firstSectionHeight - 200) {
         btn.style.display = "block";
@@ -34,13 +34,13 @@ const IndexPage = () => {
         btn.style.display = "none";
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
-  
-  
+
+
+
   return (
     <main>
       <header>
@@ -76,6 +76,10 @@ const IndexPage = () => {
             <img src="/img/okno2.svg" alt="Okno2" class="okno2" />
             <img src="/img/dollar.svg" alt="Dollar" class="dollar" />
           </div>
+          <div class="fog-overlay">
+            <img src="/img/Mlha.svg" alt="Mlha" class="fog-image" />
+          </div>
+
           {/* Středový obsah s textem a tlačítkem vedle domku */}
           <div className="center-content">
             <h1>
@@ -242,34 +246,23 @@ const IndexPage = () => {
               <p>Social: @domovsnadno</p>
             </div>
             <div className="social-icons">
-              <a href="#">
-                <img
-                  src="/img/facebook_Ikona.png"
-                  alt="Facebook"
-                  className="social-icon"
-                />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="/img/FacebookIco.png" alt="Facebook" className="social-icon" />
               </a>
-              <a href="#">
-                <img
-                  src="/img/twitter_Ikona.png"
-                  alt="Twitter"
-                  className="social-icon twitter-icon"
-                />
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <img src="/img/TwitterLogo.png" alt="Twitter" className="social-icon" />
               </a>
-              <a href="#">
-                <img
-                  src="/img/instagram_Ikona.png"
-                  alt="Instagram"
-                  className="social-icon"
-                />
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="/img/InstagramIco.png" alt="Instagram" className="social-icon" />
               </a>
             </div>
+
           </div>
         </div>
       </section>
       {/* Tlačítko pro posun nahoru */}
       <button onClick={scrollToTop} id="scrollToTopBtn" title="Nahoru">
-        <img src="/img/tlacitkoZpet.png" alt="Nahoru" className="scroll-icon" />
+        <img src="/img/ReturnICO.svg" alt="Nahoru" className="scroll-icon" />
       </button>
     </main>
   )

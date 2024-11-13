@@ -1,12 +1,11 @@
 /* Základní styl stránky */
-body,
-html {
+body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
+    width: 100vw;
     overflow-x: hidden;
-    font-family: Arial, sans-serif;
 }
+
 
 /* Styl navigační lišty */
 
@@ -76,37 +75,64 @@ header {
 /* Středový obsah s dalším posunem nahoru */
 .center-content {
     position: absolute;
-    bottom: 35%;
-    /* Posun více dolů */
-    left: 20%;
-    /* Zarovnání více vlevo, pokud potřebujete */
+    bottom: 20%;
+    left: 24%;
     transform: translate(-50%, -50%);
     text-align: left;
-    color: #000;
+    color: #fff; /* Změní barvu textu na bílou */
+    z-index: 2; /* Před překrytím mlhy */
 }
 
+.fog-overlay {
+    position: absolute;
+    top: -10px;
+    left: -700px; /* Posunuto více doleva */
+    width: 160%;
+    height: 110%;
+    z-index: 1;
+}
+
+
+.fog-image {
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+}
+
+
 .center-content h1 {
-    font-size: 4rem;
-    /* Zvýšená velikost textu */
+    font-size: 6rem; /* Velikost textu, kterou jste nastavili */
     font-weight: bold;
     margin: 0;
     line-height: 1.2;
-    /* Upravte pro menší nebo větší mezeru mezi řádky */
+    color: #fff; /* Pokud chcete text bílý */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
+
 
 .center-content .button {
     margin-top: 10px;
-    padding: 10px 20px;
+    padding: 15px 30px;
     font-size: 1rem;
     background-color: #333;
     color: #fff;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
+    width: 160px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .center-content .button:hover {
     background-color: #555;
+    transform: scale(1.1); /* Jemné zvětšení při najetí */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Přidání stínu pro zvýraznění */
 }
+
 
 /* Kontejner pro SVG prvky */
 .svg-container {
@@ -172,8 +198,8 @@ header {
 
 .bagr {
     position: absolute;
-    left: 15%;
-    bottom: -5%;
+    right: 4%;
+    bottom: -8%;
     width: 500px;
 }
 
@@ -212,9 +238,9 @@ header {
 /* Styl pro dollar */
 .dollar {
     position: absolute;
-    left: 70%;
+    right: -5%;
     /* Pozice vedle domku, upravte podle potřeby */
-    bottom: -5%;
+    bottom: 45%;
     /* Výška nad trávou, upravte podle potřeby */
     width: 400px;
     /* Velikost dollaru, upravte podle potřeby */
@@ -536,16 +562,22 @@ header {
 .contact-info {
     max-width: 800px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontální zarovnání na střed */
+    text-align: center;
 }
 
 .contact-heading {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    text-align: center; /* Zarovnání nadpisu na střed */
 }
 
 .contact-details {
     font-size: 1.1rem;
     margin-bottom: 20px;
+    text-align: center; /* Zarovnání kontaktních informací na střed */
 }
 
 .social-icons {
@@ -555,6 +587,12 @@ header {
     margin-top: 20px;
 }
 
+.social-icon {
+    width: 32px; /* Nastavení velikosti ikony */
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
 .social-icons img {
     width: 32px; /* Základní velikost pro všechny ikony */
     height: 32px;
@@ -562,8 +600,8 @@ header {
     transition: transform 0.3s;
 }
 
-.social-icons img:hover {
-    transform: scale(1.1);
+.social-icon:hover {
+    transform: scale(1.2); /* Jemné zvětšení při najetí myší */
 }
 
 .twitter-icon {
@@ -572,41 +610,36 @@ header {
 }
 
 #scrollToTopBtn {
-    display: block; /* Tlačítko je vždy viditelné */
+    display: block;
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 100;
-    background-color: #333;
-    color: white;
+    background-color: transparent; /* Odstraní pozadí */
     border: none;
-    padding: 10px;
-    border-radius: 50%;
-    font-size: 24px;
+    padding: 0; /* Žádný padding kolem ikony */
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 #scrollToTopBtn img {
-    width: 24px;
-    height: 24px;
+    width: 120px; /* Zvýšená velikost pro lepší viditelnost */
+    height: 120px;
+    transition: transform 0.3s ease;
 }
-
-#scrollToTopBtn:hover {
-    background-color: #555;
-}
-
 
 #scrollToTopBtn.visible {
     display: block; /* Zobrazí tlačítko */
 }
 
 
+
+#scrollToTopBtn:hover img {
+    transform: scale(1.2); /* Jemné zvětšení při najetí myší */
+}
+
+
 #scrollToTopBtn img {
     width: 24px;
     height: 24px;
-}
-
-#scrollToTopBtn:hover {
-    background-color: #555;
 }
