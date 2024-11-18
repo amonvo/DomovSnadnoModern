@@ -8,7 +8,6 @@ body, html {
 
 
 /* Styl navigační lišty */
-
 header {
     background-color: #333;
     color: white;
@@ -92,13 +91,11 @@ header {
     z-index: 1;
 }
 
-
 .fog-image {
     width: 100%;
     height: 100%;
     opacity: 0.9;
 }
-
 
 .center-content h1 {
     font-size: 6rem; /* Velikost textu, kterou jste nastavili */
@@ -108,7 +105,6 @@ header {
     color: #fff; /* Pokud chcete text bílý */
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
-
 
 .center-content .button {
     margin-top: 10px;
@@ -195,7 +191,6 @@ header {
     height: auto;
 }
 
-
 /* Styl pro první sekci */
 .bagr-first-section {
     position: absolute;
@@ -205,6 +200,7 @@ header {
     height: auto;
 }
 
+/* Styl pro druhou sekci */
 /* Styl pro druhou sekci */
 .bagr-second-section {
     position: absolute;
@@ -218,21 +214,78 @@ header {
 .bagr-wrapper .bagr-vizitka {
     position: absolute;
     bottom: 120px;
-    left: 50%;
+    left: 20%; /* Posun vizitky více doleva */
     transform: translateX(-50%);
-    display: none;
-    width: 1800px; /* Zvětšení vizitky */
+    opacity: 0; /* Skrytí vizitky na začátku */
+    visibility: hidden; /* Zabránění interakcím s vizitkou, když není vidět */
+    width: 600px; /* Velikost vizitky */
     height: auto;
     z-index: 10;
+    border-radius: 20px; /* Zaoblené rohy */
+    overflow: hidden; /* Skrytí obsahu přesahujícího vizitku */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Jemný stín */
+    border: 2px solid #ddd; /* Světlý okraj */
+    background-color: #fff; /* Bílý podklad */
+    padding: 15px; /* Vnitřní odsazení */
+    animation: none; /* Animace se přidá dynamicky */
+    pointer-events: none; /* Zabrání posunu při pohybu myši */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Plynulé zobrazení a skrytí */
 }
 
 .bagr-wrapper:hover .bagr-vizitka {
-    display: block; /* Zobrazení vizitky při najetí myší na bagr ve druhé sekci */
+    opacity: 1; /* Zobrazení vizitky */
+    visibility: visible; /* Zajištění interakce */
+    pointer-events: auto; /* Povolení interakcí, když je vizitka viditelná */
+    animation: fadeIn 0.5s; /* Použití animace při zobrazení */
+    transition-delay: 0s; /* Bez zpoždění při zobrazení */
 }
 
-.svg-container2 .bagr:hover + .bagr-vizitka {
-    display: block; /* Zobrazí vizitku při najetí myší na bagr */
+.bagr-wrapper:not(:hover) .bagr-vizitka {
+    transition-delay: 1s; /* Zpoždění skrytí vizitky po odjetí myší */
 }
+
+.bagr-vizitka:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.bagr-vizitka::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #ff9800;
+    margin: 0 auto 15px auto;
+    border-radius: 2px;
+}
+
+.bagr-vizitka h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.bagr-vizitka p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.bagr-wrapper:hover .bagr-vizitka {
+    display: block; /* Zobrazení vizitky při najetí myší na bagr */
+    animation: fadeIn 0.5s ease-in-out; /* Přidání animačního efektu */
+}
+
 
 .kameny {
     position: absolute;
@@ -278,7 +331,6 @@ header {
     height: auto;
 }
 
-
 /* Styl pro nadpis sekce firem */
 .company-heading {
     font-size: 2.5rem;
@@ -291,7 +343,6 @@ header {
     color: #333;
     /* Barva nadpisu */
 }
-
 
 /* Styl pro sekci firem */
 .company-list {
@@ -319,7 +370,6 @@ header {
     margin-top: 200px;
     /* Zvýšené horní odsazení pro výraznější posunutí dolů */
 }
-
 
 /* Styl pro každou položku firmy */
 .company-item {
@@ -476,7 +526,6 @@ header {
     color: #fff;
 }
 
-
 .projects-item hr {
     width: 30px;
     /* Délka čáry */
@@ -496,7 +545,6 @@ header {
     flex-direction: column;
     gap: 20px;
 }
-
 
 .projects-column p {
     font-size: 1.2rem;
@@ -589,7 +637,6 @@ header {
     object-fit: cover; /* Přizpůsobí obsah pro plné zobrazení bez deformace */
 }
 
-
 .contact-info {
     max-width: 800px;
     margin: 0 auto;
@@ -662,8 +709,6 @@ header {
 #scrollToTopBtn.visible {
     display: block; /* Zobrazí tlačítko */
 }
-
-
 
 #scrollToTopBtn:hover img {
     transform: scale(1.2); /* Jemné zvětšení při najetí myší */
