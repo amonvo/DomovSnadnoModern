@@ -13,31 +13,30 @@ const IndexPage = () => {
   }
 
   const scrollToTop = () => {
-    const section = document.getElementById("home");
+    const section = document.getElementById("home")
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: "smooth" })
     }
-  };
-
+  }
 
   // Zobrazení tlačítka při posunutí dolů
   React.useEffect(() => {
     const handleScroll = () => {
-      const btn = document.getElementById("scrollToTopBtn");
-      const firstSection = document.getElementById("home");
-      const firstSectionHeight = firstSection.offsetHeight;
+      const btn = document.getElementById("scrollToTopBtn")
+      const firstSection = document.getElementById("home")
+      const firstSectionHeight = firstSection.offsetHeight
 
       // Podmínka pro zobrazení tlačítka
       if (window.scrollY > firstSectionHeight - 200) {
-        btn.style.display = "block";
+        btn.style.display = "block"
       } else {
-        btn.style.display = "none";
+        btn.style.display = "none"
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <main>
@@ -64,11 +63,16 @@ const IndexPage = () => {
       <Layout>
         <section id="home" className="section background-section">
           {/* SVG prvky */}
-          <div class="svg-container">
+          <div className="svg-container">
             <img src="/img/Domek-Final.svg" alt="Domek" class="domek" />
             <img src="/img/SolaryNew.png" alt="Solary" class="solary" />
             <img src="/img/strom.svg" alt="Strom" class="strom" />
-            <img src="/img/bagr.svg" alt="Bagr" className="bagr-first-section" /> {/* Přidání jedinečné třídy */}
+            <img
+              src="/img/bagr.svg"
+              alt="Bagr"
+              className="bagr-first-section"
+            />{" "}
+            {/* Přidání jedinečné třídy */}
             <img src="/img/kameny.svg" alt="Kameny" class="kameny" />
             <img src="/img/okno1.svg" alt="Okno1" class="okno1" />
             <img src="/img/okno2.svg" alt="Okno2" class="okno2" />
@@ -102,27 +106,37 @@ const IndexPage = () => {
       </Layout>
 
       <section id="second-section" className="section background-section">
-  {/* Druhá sekce s pozadím */}
-  <div className="svg-container2">
-    <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
-    <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
-    <img src="/img/strom.svg" alt="Strom" className="strom" />
-    
-{/* Obal kolem bagru a vizitky */}
-    <div className="bagr-wrapper">
-      <img src="/img/bagr.svg" alt="Bagr" className="bagr-second-section" />
-      <div className="bagr-vizitka animate__animated animate__fadeIn">
-        <img src="/img/KnizekBagrVizitka.png" alt="Vizitka Bagr" />
-      </div>
-    </div>
-    
-    <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
-    <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
-    <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
-    <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
-  </div>
-</section>
+        {/* Druhá sekce s pozadím */}
+        <div className="svg-container2">
+          <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
+          <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
+          {/* Obal kolem stromku a vizitky */}
+          {/* Obal kolem stromku a vizitky */}
+          <div className="strom-wrapper">
+            <img src="/img/strom.svg" alt="Strom" className="strom" />
+            <div className="strom-vizitka animate__animated animate__fadeIn">
+              <img src="/img/SkritekStromVizitka.png" alt="Vizitka Strom" />
+            </div>
+          </div>
 
+          {/* Obal kolem bagru a vizitky */}
+          <div className="bagr-wrapper">
+            <img
+              src="/img/bagr.svg"
+              alt="Bagr"
+              className="bagr-second-section"
+            />
+            <div className="bagr-vizitka animate__animated animate__fadeIn">
+              <img src="/img/KnizekBagrVizitka.png" alt="Vizitka Bagr" />
+            </div>
+          </div>
+
+          <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
+          <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
+          <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
+          <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
+        </div>
+      </section>
 
       {/* Třetí sekce */}
       <section id="companies" className="section company-list">
@@ -253,17 +267,40 @@ const IndexPage = () => {
               <p>Social: @domovsnadno</p>
             </div>
             <div className="social-icons">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="/img/FacebookIco.png" alt="Facebook" className="social-icon" />
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/img/FacebookIco.png"
+                  alt="Facebook"
+                  className="social-icon"
+                />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <img src="/img/TwitterLogo.png" alt="Twitter" className="social-icon" />
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/img/TwitterLogo.png"
+                  alt="Twitter"
+                  className="social-icon"
+                />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <img src="/img/InstagramIco.png" alt="Instagram" className="social-icon" />
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/img/InstagramIco.png"
+                  alt="Instagram"
+                  className="social-icon"
+                />
               </a>
             </div>
-
           </div>
         </div>
       </section>

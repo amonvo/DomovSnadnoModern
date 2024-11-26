@@ -191,6 +191,63 @@ header {
     height: auto;
 }
 
+/* Styl pro strom-wrapper */
+.strom-wrapper {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    width: 600px; /* Stejná šířka jako strom */
+    height: auto;
+    cursor: pointer;
+}
+
+/* Ujistěte se, že strom uvnitř strom-wrapper zabírá celou šířku */
+.strom-wrapper .strom {
+    width: 100%;
+    height: auto;
+}
+
+/* Styl pro strom-vizitka */
+.strom-wrapper .strom-vizitka {
+    position: absolute;
+    bottom: 120px;
+    left: 230%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    width: 600px;
+    height: auto;
+    z-index: 10;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #ddd;
+    background-color: #fff;
+    padding: 15px;
+    animation: none;
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Zobrazení vizitky při najetí myší na strom-wrapper */
+.strom-wrapper:hover .strom-vizitka {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    animation: fadeIn 0.5s;
+    transition-delay: 0s;
+}
+
+.strom-wrapper:not(:hover) .strom-vizitka {
+    transition-delay: 1s;
+}
+
+/* Efekt při najetí myší na vizitku */
+.strom-vizitka:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
 /* Styl pro první sekci */
 .bagr-first-section {
     position: absolute;
@@ -200,7 +257,7 @@ header {
     height: auto;
 }
 
-/* Styl pro druhou sekci */
+
 /* Styl pro druhou sekci */
 .bagr-second-section {
     position: absolute;
