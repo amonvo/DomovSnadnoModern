@@ -106,37 +106,47 @@ const IndexPage = () => {
       </Layout>
 
       <section id="second-section" className="section background-section">
-        {/* Druhá sekce s pozadím */}
-        <div className="svg-container2">
-          <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
-          <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
-          {/* Obal kolem stromku a vizitky */}
-          {/* Obal kolem stromku a vizitky */}
-          <div className="strom-wrapper">
-            <img src="/img/strom.svg" alt="Strom" className="strom" />
-            <div className="strom-vizitka animate__animated animate__fadeIn">
-              <img src="/img/SkritekStromVizitka.png" alt="Vizitka Strom" />
-            </div>
-          </div>
+  {/* Navigační lišta ve druhé sekci */}
+  <header className="section-navbar">
+    <ul className="navbar">
+      <li data-number="1"><a href="#">Okna</a></li>
+      <li data-number="2"><a href="#">Dveře</a></li>
+      <li data-number="3"><a href="#">Garážová vrata</a></li>
+      <li data-number="4"><a href="#">Stínící technika</a></li>
+      <li data-number="5"><a href="#">Pergoly</a></li>
+      <li data-number="6"><a href="#">Automatizace domácnosti</a></li>
+      <li data-number="7"><a href="#">Ostatní</a></li>
+    </ul>
+  </header>
 
-          {/* Obal kolem bagru a vizitky */}
-          <div className="bagr-wrapper">
-            <img
-              src="/img/bagr.svg"
-              alt="Bagr"
-              className="bagr-second-section"
-            />
-            <div className="bagr-vizitka animate__animated animate__fadeIn">
-              <img src="/img/KnizekBagrVizitka.png" alt="Vizitka Bagr" />
-            </div>
-          </div>
+  {/* Druhá sekce s pozadím */}
+  <div className="svg-container2">
+    <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
+    <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
 
-          <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
-          <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
-          <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
-          <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
-        </div>
-      </section>
+    {/* Obal kolem stromku a vizitky */}
+    <div className="strom-wrapper">
+      <img src="/img/strom.svg" alt="Strom" className="strom" />
+      <div className="strom-vizitka animate__animated animate__fadeIn">
+        <img src="/img/SkritekStromVizitka.png" alt="Vizitka Strom" />
+      </div>
+    </div>
+
+    {/* Obal kolem bagru a vizitky */}
+    <div className="bagr-wrapper">
+      <img src="/img/bagr.svg" alt="Bagr" className="bagr-second-section" />
+      <div className="bagr-vizitka animate__animated animate__fadeIn">
+        <img src="/img/KnizekBagrVizitka.png" alt="Vizitka Bagr" />
+      </div>
+    </div>
+
+    <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
+    <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
+    <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
+    <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
+  </div>
+</section>
+
 
       {/* Třetí sekce */}
       <section id="companies" className="section company-list">

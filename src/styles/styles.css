@@ -9,37 +9,127 @@ body, html {
 
 /* Styl navigační lišty */
 header {
-    background-color: #333;
-    color: white;
+    background: transparent; /* Průhledné pozadí */
+    color: black;
     padding: 0;
-    /* zvětšený horní a dolní padding */
     margin: 0;
     text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
+/* Navigační lišta - styl podle vzoru */
 .navbar {
     display: flex;
     justify-content: center;
+    align-items: center;
     list-style-type: none;
-    padding: 0;
+    padding: 20px 0;
     margin: 0;
+    font-size: 1.4rem;
+    background: transparent; /* Zajistí průhlednost */
 }
 
 .navbar li {
-    margin: 0 18px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #000; /* Černá barva textu */
+    margin: 0 15px; /* Prostor mezi položkami */
+    position: relative;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
+/* Styl čísel v kruhu */
+.navbar li::before {
+    content: attr(data-number);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #ff5722; /* Oranžový rámeček */
+    border-radius: 50%;
+    font-size: 1rem;
     font-weight: bold;
-    font-size: 2rem;
+    color: #ff5722; /* Stejná oranžová barva */
+    margin-right: 10px; /* Mezera mezi číslem a textem */
+}
+
+/* Odkazy v navigaci */
+.navbar a {
+    text-decoration: none;
+    color: black;
     transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #ddd;
+    color: #ff5722; /* Oranžová barva při hoveru */
 }
+
+
+/* Navigační lišta ve druhé sekci */
+.section-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent; /* Průhledné pozadí */
+    text-align: center;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+/* Navigační lišta - stejný styl */
+.section-navbar .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    background: transparent;
+}
+
+.section-navbar .navbar li {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: black;
+    margin: 0 15px;
+    position: relative;
+}
+
+/* Číselné bubliny */
+.section-navbar .navbar li::before {
+    content: attr(data-number);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #ff5722;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff5722;
+    margin-right: 10px;
+}
+
+/* Odkazy */
+.section-navbar .navbar a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.section-navbar .navbar a:hover {
+    color: #ff5722;
+}
+
 
 /* Styl pro sekci */
 .section {
