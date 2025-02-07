@@ -106,7 +106,7 @@ const IndexPage = () => {
       </Layout>
 
       <section id="second-section" className="section background-section">
-  {/* Navigační lišta ve druhé sekci (bez odkazů) */}
+  {/* Navigační lišta ve druhé sekci */}
   <header className="section-navbar">
     <ul className="navbar">
       <li
@@ -160,6 +160,7 @@ const IndexPage = () => {
     <div className="okno-zvyrazneni"></div>
   </div>
 </section>
+
 
 
 

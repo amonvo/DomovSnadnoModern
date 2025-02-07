@@ -310,10 +310,12 @@ header {
     justify-content: center;
 }
 
+/* Bílé číslo 1 na okně - vycentrování */
 .okno-kruh {
     position: absolute;
-    top: 53%; /* Posunuto níže */
-    left: 48%;
+    top: 50%; /* Posunutí do středu */
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
     background-color: white;
@@ -328,27 +330,74 @@ header {
     z-index: 10;
 }
 
+/* Bílé číslo 1 na okně - upravená pozice */
+.okno-kruh {
+    position: absolute;
+    top: 58%; /* Stejné místo */
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 3px solid #ff5722;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5722;
+    z-index: 20; /* VYŠŠÍ než okno-zvyrazneni! */
+}
+
+/* Výchozí stav překrytí okna */
 .okno-zvyrazneni {
     position: absolute;
-    top: 50%; /* Posunuto níže */
-    left: 45%;
-    width: 80px;
-    height: 80px;
-    background-color: rgba(255, 87, 34, 0.6);
+    top: 58%; /* Stále vycentrované */
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 120px; /* Zvýšená velikost */
+    height: 120px;
+    background-color: rgba(255, 87, 34, 1); /* 100% sytá oranžová */
     display: none;
-    z-index: 9;
+    z-index: 11; /* Zvýšení vrstvy nad číslem */
     transition: opacity 0.3s ease-in-out;
 }
 
+/* Aktivace překrytí při najetí na číslo 1 v navigaci */
+.navbar li[data-number="1"]:hover ~ .okno-zvyrazneni {
+    display: block; /* Plné zobrazení */
+    opacity: 1;
+}
+
+/* Pulzující efekt */
+@keyframes pulseEffect {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.05);
+        box-shadow: 0 0 100px rgba(255, 0, 0, 1);
+    }
+}
+
+
+/* Efekt při najetí na "Okna" v navigační liště */
 .okno-zvyrazneni.visible {
     display: block;
 }
 
 
-/* Zobrazení červeného zvýraznění při hoveru */
-.navbar li[data-number="1"]:hover ~ .okno-zvyrazneni {
-    opacity: 1;
+
+
+/* Efekt na číslo 1 při najetí */
+.navbar li[data-number="1"]:hover ~ .okno-kruh {
+    background-color: #ff5722;
+    color: white;
 }
+
+
 
 
 .solary {
