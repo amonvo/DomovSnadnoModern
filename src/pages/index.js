@@ -1,12 +1,19 @@
 import * as React from "react"
+import { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import "../styles/styles.css"
 
 const IndexPage = () => {
-  // Funkce pro přesun na sekci "companies"
-  const scrollToSection = () => {
-    const section = document.getElementById("companies")
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+
+  // Funkce pro scrollování do sekcí
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id)
     if (section) {
       section.scrollIntoView({ behavior: "smooth" })
     }
@@ -19,70 +26,72 @@ const IndexPage = () => {
     }
   }
 
-  // Zobrazení tlačítka při posunutí dolů
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const btn = document.getElementById("scrollToTopBtn")
       const firstSection = document.getElementById("home")
-      const firstSectionHeight = firstSection.offsetHeight
-
-      // Podmínka pro zobrazení tlačítka
-      if (window.scrollY > firstSectionHeight - 200) {
-        btn.style.display = "block"
-      } else {
-        btn.style.display = "none"
+      if (firstSection) {
+        const firstSectionHeight = firstSection.offsetHeight
+        if (window.scrollY > firstSectionHeight - 200) {
+          btn.style.display = "block"
+        } else {
+          btn.style.display = "none"
+        }
       }
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
     <main>
+      {/* Hlavní navigační lišta */}
       <header>
-        <ul className="navbar">
-          <li>
-            <a href="#home">Domů</a>
-          </li>
-          <li>
-            <a href="#companies">Firmy</a>
-          </li>
-          <li>
-            <a href="#about">O nás</a>
-          </li>
-          <li>
-            <a href="#realizations">Realizace</a>
-          </li>
-          <li>
-            <a href="#contact">Kontakt</a>
-          </li>
-        </ul>
+        {/* Desktopová navigace */}
+        <div className="desktop-nav">
+          <ul className="navbar">
+            <li><a href="#home">Domů</a></li>
+            <li><a href="#companies">Firmy</a></li>
+            <li><a href="#about">O nás</a></li>
+            <li><a href="#projects">Projekty</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </div>
+        {/* Mobilní navigace – hamburger menu */}
+        <div className="mobile-nav">
+          <button className="hamburger" onClick={toggleMobileMenu}>
+            ☰
+          </button>
+          {mobileMenuOpen && (
+            <ul className="mobile-menu">
+              <li><a href="#home" onClick={toggleMobileMenu}>Domů</a></li>
+              <li><a href="#companies" onClick={toggleMobileMenu}>Firmy</a></li>
+              <li><a href="#about" onClick={toggleMobileMenu}>O nás</a></li>
+              <li><a href="#projects" onClick={toggleMobileMenu}>Projekty</a></li>
+              <li><a href="#contact" onClick={toggleMobileMenu}>Kontakt</a></li>
+            </ul>
+          )}
+        </div>
       </header>
 
       <Layout>
+        {/* PRVNÍ SEKCE – Home */}
         <section id="home" className="section background-section">
-          {/* SVG prvky */}
+          {/* Dekorativní SVG prvky – zobrazení pouze v desktopové verzi */}
           <div className="svg-container">
-            <img src="/img/Domek-Final.svg" alt="Domek" class="domek" />
-            <img src="/img/SolaryNew.png" alt="Solary" class="solary" />
-            <img src="/img/strom.svg" alt="Strom" class="strom" />
-            <img
-              src="/img/bagr.svg"
-              alt="Bagr"
-              className="bagr-first-section"
-            />{" "}
-            {/* Přidání jedinečné třídy */}
-            <img src="/img/kameny.svg" alt="Kameny" class="kameny" />
-            <img src="/img/okno1.svg" alt="Okno1" class="okno1" />
-            <img src="/img/okno2.svg" alt="Okno2" class="okno2" />
-            <img src="/img/dollar.svg" alt="Dollar" class="dollar" />
+            <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
+            <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
+            <img src="/img/strom.svg" alt="Strom" className="strom" />
+            <img src="/img/bagr.svg" alt="Bagr" className="bagr-first-section" />
+            <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
+            <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
+            <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
+            <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
           </div>
-          <div class="fog-overlay">
-            <img src="/img/Mlha.svg" alt="Mlha" class="fog-image" />
+          <div className="fog-overlay">
+            <img src="/img/Mlha.svg" alt="Mlha" className="fog-image" />
           </div>
-
-          {/* Středový obsah s textem a tlačítkem vedle domku */}
+          {/* Středový obsah – desktop: titulek a tlačítko */}
           <div className="center-content">
             <h1>
               Najděte
@@ -93,11 +102,7 @@ const IndexPage = () => {
             </h1>
             <button
               className="button"
-              onClick={() =>
-                document
-                  .getElementById("second-section")
-                  .scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => scrollToSection("second-section")}
             >
               Hledat
             </button>
@@ -105,138 +110,121 @@ const IndexPage = () => {
         </section>
       </Layout>
 
+      {/* DRUHÁ SEKCE – pouze pro desktop */}
       <section id="second-section" className="section background-section">
-  {/* Navigační lišta ve druhé sekci */}
-  <header className="section-navbar">
-    <ul className="navbar">
-      {/* 1. Okna */}
-      <li
-        data-number="1"
-        onMouseEnter={() => {
-          document.querySelectorAll(".okno-zvyrazneni").forEach(el => {
-            el.classList.add("visible");
-          });
-        }}
-        onMouseLeave={() => {
-          document.querySelectorAll(".okno-zvyrazneni").forEach(el => {
-            el.classList.remove("visible");
-          });
-        }}
-      >
-        <span>Okna</span>
-      </li>
+        <header className="section-navbar">
+          <ul className="navbar">
+            <li
+              data-number="1"
+              onMouseEnter={() => {
+                document.querySelectorAll(".okno-zvyrazneni").forEach(el => {
+                  el.classList.add("visible")
+                })
+              }}
+              onMouseLeave={() => {
+                document.querySelectorAll(".okno-zvyrazneni").forEach(el => {
+                  el.classList.remove("visible")
+                })
+              }}
+            >
+              <span>Okna</span>
+            </li>
+            <li
+              data-number="2"
+              onMouseEnter={() => {
+                document.querySelectorAll(".dvere-zvyrazneni").forEach(el => {
+                  el.classList.add("visible")
+                })
+              }}
+              onMouseLeave={() => {
+                document.querySelectorAll(".dvere-zvyrazneni").forEach(el => {
+                  el.classList.remove("visible")
+                })
+              }}
+            >
+              <span>Dveře</span>
+            </li>
+            <li
+              data-number="3"
+              onMouseEnter={() => {
+                document.querySelectorAll(".kameni-zvyrazneni").forEach(el => {
+                  el.classList.add("visible")
+                })
+              }}
+              onMouseLeave={() => {
+                document.querySelectorAll(".kameni-zvyrazneni").forEach(el => {
+                  el.classList.remove("visible")
+                })
+              }}
+            >
+              <span>Kamenictví</span>
+            </li>
+            <li
+              data-number="4"
+              onMouseEnter={() => {
+                document.querySelectorAll(".strecha-zvyrazneni").forEach(el => {
+                  el.classList.add("visible")
+                })
+              }}
+              onMouseLeave={() => {
+                document.querySelectorAll(".strecha-zvyrazneni").forEach(el => {
+                  el.classList.remove("visible")
+                })
+              }}
+            >
+              <span>Střechy</span>
+            </li>
+            <li data-number="5"><span>Pergoly</span></li>
+            <li data-number="6"><span>Automatizace domácnosti</span></li>
+            <li data-number="7"><span>Ostatní</span></li>
+          </ul>
+        </header>
+        <div className="svg-container2">
+          <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
+          <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
+          <div className="strom-wrapper">
+            <img src="/img/strom.svg" alt="Strom" className="strom" />
+          </div>
+          <div className="bagr-wrapper">
+            <img src="/img/bagr.svg" alt="Bagr" className="bagr-second-section" />
+          </div>
+          <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
+          <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
+          {/* Overlay pro okna – pozicováno přesně přes bílý kruh s číslem 1 */}
+          <div className="okno-zvyrazneni">
+            <span>OKNA</span>
+          </div>
+          <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
+          <div className="okno-zvyrazneni">
+            <span>OKNA</span>
+          </div>
+          <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
+          {/* Overlay pro dveře, kamenictví a střechy – necháváme je beze změny */}
+          <div className="dvere-zvyrazneni">
+            <span>DVEŘE</span>
+          </div>
+          <div className="kameni-zvyrazneni">
+            <span>KAMENÍ</span>
+          </div>
+          <div className="strecha-zvyrazneni">
+            <span>STŘECHY</span>
+          </div>
+          <div className="okno-kruh">
+            <span>1</span>
+          </div>
+          <div className="dvere-kruh">
+            <span>2</span>
+          </div>
+          <div className="kameni-kruh">
+            <span>3</span>
+          </div>
+          <div className="strecha-kruh">
+            <span>4</span>
+          </div>
+        </div>
+      </section>
 
-      {/* 2. Dveře */}
-      <li
-        data-number="2"
-        onMouseEnter={() => {
-          document.querySelectorAll(".dvere-zvyrazneni").forEach(el => {
-            el.classList.add("visible");
-          });
-        }}
-        onMouseLeave={() => {
-          document.querySelectorAll(".dvere-zvyrazneni").forEach(el => {
-            el.classList.remove("visible");
-          });
-        }}
-      >
-        <span>Dveře</span>
-      </li>
-
-      {/* 3. Kamenictví */}
-      <li
-        data-number="3"
-        onMouseEnter={() => {
-          document.querySelectorAll(".kameni-zvyrazneni").forEach(el => {
-            el.classList.add("visible");
-          });
-        }}
-        onMouseLeave={() => {
-          document.querySelectorAll(".kameni-zvyrazneni").forEach(el => {
-            el.classList.remove("visible");
-          });
-        }}
-      >
-        <span>Kamenictví</span>
-      </li>
-
-      {/* 4. Střechy */}
-      <li
-        data-number="4"
-        onMouseEnter={() => {
-          document.querySelectorAll(".strecha-zvyrazneni").forEach(el => {
-            el.classList.add("visible");
-          });
-        }}
-        onMouseLeave={() => {
-          document.querySelectorAll(".strecha-zvyrazneni").forEach(el => {
-            el.classList.remove("visible");
-          });
-        }}
-      >
-        <span>Střechy</span>
-      </li>
-
-      <li data-number="5"><span>Pergoly</span></li>
-      <li data-number="6"><span>Automatizace domácnosti</span></li>
-      <li data-number="7"><span>Ostatní</span></li>
-    </ul>
-  </header>
-
-  {/* SVG pozadí a prvky domku */}
-  <div className="svg-container2">
-    <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
-    <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
-
-    <div className="strom-wrapper">
-      <img src="/img/strom.svg" alt="Strom" className="strom" />
-    </div>
-
-    <div className="bagr-wrapper">
-      <img src="/img/bagr.svg" alt="Bagr" className="bagr-second-section" />
-    </div>
-
-    <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
-    <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
-    <div className="okno-zvyrazneni">
-      <span>OKNA</span>
-    </div>
-    <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
-    <div className="okno-zvyrazneni">
-      <span>OKNA</span>
-    </div>
-    <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
-
-    {/* Zvýrazňovací overlay prvky – při najetí myší se zobrazí text */}
-    <div className="dvere-zvyrazneni">
-      <span>DVEŘE</span>
-    </div>
-    <div className="kameni-zvyrazneni">
-      <span>KAMENÍ</span>
-    </div>
-    <div className="strecha-zvyrazneni">
-      <span>STŘECHY</span>
-    </div>
-
-    {/* Defaultní čísla – kruhy, které se překryjí overlay efektem při hoveru */}
-    <div className="okno-kruh">
-      <span>1</span>
-    </div>
-    <div className="dvere-kruh">
-      <span>2</span>
-    </div>
-    <div className="kameni-kruh">
-      <span>3</span>
-    </div>
-    <div className="strecha-kruh">
-      <span>4</span>
-    </div>
-  </div>
-</section>
-
-
-
-      {/* Třetí sekce */}
+      {/* Zbytek sekcí – Firmy, O nás, Projekty, Kontakt (desktop) */}
       <section id="companies" className="section company-list">
         <h2 className="company-heading">SEZNAM FIREM</h2>
         <div className="company-columns">
@@ -258,156 +246,68 @@ const IndexPage = () => {
         </div>
       </section>
 
-      {/* Třetí sekce */}
       <section id="about" className="section about-section">
         <div className="about-text">
           <h2>O NÁS</h2>
           <p>
-            Spojujeme firmy, jež sdílejí nejen vzájemnou podporu a spolupráci,
-            ale i skutečnou vášeň pro svou práci. Naším cílem je vytvářet
-            prostor, kde se kvalitní služby potkávají s odborností a nasazením,
-            které posouvají každodenní spolupráci na novou úroveň.
+            Spojujeme firmy, jež sdílejí nejen vzájemnou podporu a spolupráci, ale i vášeň pro svou práci.
           </p>
         </div>
         <img src="/img/Onas.png" alt="O nás" className="about-image" />
       </section>
 
-      {/* Čtvrtá sekce */}
       <section id="projects" className="section projects-section">
         <div className="projects-container">
-          <img
-            src="/img/ProcVyuzitDomovSnadno.png"
-            alt="Proč využít Domov Snadno"
-            className="projects-image"
-          />
+          <img src="/img/ProcVyuzitDomovSnadno.png" alt="Proč využít Domov Snadno" className="projects-image" />
           <div className="projects-text">
             <h2>PROČ VYUŽÍT DOMOV SNADNO?</h2>
             <hr />
             <div className="projects-list">
               <div className="projects-column">
-                <p>
-                  Známe se.
-                  <br />A spolupracujeme spolu na projektech
-                </p>
+                <p>Známe se. A spolupracujeme spolu na projektech</p>
                 <p>Jsme odborníky v našich oborech.</p>
               </div>
               <div className="projects-column">
-                <p>
-                  Dokážeme se domluvit
-                  <br />a tím ušetřit Váš čas.
-                </p>
-                <p>
-                  Všechny projekty řešíme s důrazem na kvalitu provedení a
-                  design.
-                </p>
+                <p>Dokážeme se domluvit a tím ušetřit Váš čas.</p>
+                <p>Všechny projekty řešíme s důrazem na kvalitu provedení a design.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pátá sekce */}
-      <section id="realizations" className="section projects-section">
-        <h2 className="realizations-heading">Realizace</h2>
-        <div className="project-list">
-          <div className="project-item">
-            <img
-              src="/img/RealizaceRodinneDomy1.png"
-              alt="Rodinný dům Třemošná"
-              className="project-image"
-            />
-            <div className="project-info">
-              <h3>Rodinný dům Třemošná</h3>
-              <p>Realizace 2023</p>
-            </div>
-          </div>
-          <div className="project-item">
-            <img
-              src="/img/RealizaceRodinneDomy2.png"
-              alt="Rodinný dům Šťáhlavy"
-              className="project-image"
-            />
-            <div className="project-info">
-              <h3>Rodinný dům Šťáhlavy</h3>
-              <p>Realizace 2024</p>
-            </div>
-          </div>
-          <div className="project-item">
-            <img
-              src="/img/RealizaceRodinneDomy3.png"
-              alt="Rodinný dům Plzeň Doubravka"
-              className="project-image"
-            />
-            <div className="project-info">
-              <h3>Rodinný dům Plzeň Doubravka</h3>
-              <p>Realizace 2024</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Šestá sekce */}
       <section id="contact" className="section contact-section">
         <div className="contact-container">
-          <img
-            src="/img/KontaktujteNas.png"
-            alt="Kontaktujte nás"
-            className="contact-image"
-          />
+          <img src="/img/KontaktujteNas.png" alt="Kontaktujte nás" className="contact-image" />
           <div className="contact-info">
             <h2 className="contact-heading">KONTAKTUJTE NÁS</h2>
             <div className="contact-details">
-              <p>
-                <strong>Hlavní kontakt</strong>
-              </p>
+              <p><strong>Hlavní kontakt</strong></p>
               <p>Tel: (123) 456-7890</p>
               <p>Email: info@domovsnadno.cz</p>
               <p>Social: @domovsnadno</p>
             </div>
             <div className="social-icons">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/img/FacebookIco.png"
-                  alt="Facebook"
-                  className="social-icon"
-                />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="/img/FacebookIco.png" alt="Facebook" className="social-icon" />
               </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/img/TwitterLogo.png"
-                  alt="Twitter"
-                  className="social-icon"
-                />
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <img src="/img/TwitterLogo.png" alt="Twitter" className="social-icon" />
               </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/img/InstagramIco.png"
-                  alt="Instagram"
-                  className="social-icon"
-                />
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="/img/InstagramIco.png" alt="Instagram" className="social-icon" />
               </a>
             </div>
           </div>
         </div>
       </section>
-      {/* Tlačítko pro posun nahoru */}
+
       <button onClick={scrollToTop} id="scrollToTopBtn" title="Nahoru">
         <img src="/img/ReturnICO.svg" alt="Nahoru" className="scroll-icon" />
       </button>
     </main>
   )
 }
+
 export const Head = () => <Seo title="Domov Snadno" />
 export default IndexPage
