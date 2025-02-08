@@ -106,65 +106,71 @@ const IndexPage = () => {
       </Layout>
 
       <section id="second-section" className="section background-section">
-  {/* Navigační lišta ve druhé sekci */}
-  <header className="section-navbar">
-    <ul className="navbar">
-      <li
-        data-number="1"
-        onMouseEnter={() => document.querySelector(".okno-zvyrazneni").classList.add("visible")}
-        onMouseLeave={() => document.querySelector(".okno-zvyrazneni").classList.remove("visible")}
-      >
-        <span>Okna</span>
-      </li>
-      <li data-number="2"><span>Dveře</span></li>
-      <li data-number="3"><span>Garážová vrata</span></li>
-      <li data-number="4"><span>Stínící technika</span></li>
-      <li data-number="5"><span>Pergoly</span></li>
-      <li data-number="6"><span>Automatizace domácnosti</span></li>
-      <li data-number="7"><span>Ostatní</span></li>
-    </ul>
-  </header>
+        {/* Navigační lišta ve druhé sekci */}
+        <header className="section-navbar">
+          <ul className="navbar">
+            <li
+              data-number="1"
+              onMouseEnter={() => {
+                document.querySelectorAll(".okno-zvyrazneni").forEach(el => {
+                  el.classList.add("visible");
+                });
+              }}
+              onMouseLeave={() => {
+                document.querySelectorAll(".okno-zvyrazneni").forEach(el => {
+                  el.classList.remove("visible");
+                });
+              }}
+            >
+              <span>Okna</span>
+            </li>
 
-  {/* Druhá sekce s pozadím */}
-  <div className="svg-container2">
-    <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
-    <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
+            <li data-number="2"><span>Dveře</span></li>
+            <li data-number="3"><span>Garážová vrata</span></li>
+            <li data-number="4"><span>Stínící technika</span></li>
+            <li data-number="5"><span>Pergoly</span></li>
+            <li data-number="6"><span>Automatizace domácnosti</span></li>
+            <li data-number="7"><span>Ostatní</span></li>
+          </ul>
+        </header>
 
-    {/* Obal kolem stromku a vizitky */}
-    <div className="strom-wrapper">
-      <img src="/img/strom.svg" alt="Strom" className="strom" />
-      <div className="strom-vizitka animate__animated animate__fadeIn">
-        <img src="/img/SkritekStromVizitka.png" alt="Vizitka Strom" />
-      </div>
-    </div>
+        {/* Druhá sekce s pozadím */}
+        <div className="svg-container2">
+          <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
+          <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
 
-    {/* Obal kolem bagru a vizitky */}
-    <div className="bagr-wrapper">
-      <img src="/img/bagr.svg" alt="Bagr" className="bagr-second-section" />
-      <div className="bagr-vizitka animate__animated animate__fadeIn">
-        <img src="/img/KnizekBagrVizitka.png" alt="Vizitka Bagr" />
-      </div>
-    </div>
+          {/* Obal kolem stromku a vizitky */}
+          <div className="strom-wrapper">
+            <img src="/img/strom.svg" alt="Strom" className="strom" />
+          </div>
 
-    <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
-    <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
-    <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
-    <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
+          {/* Obal kolem bagru a vizitky */}
+          <div className="bagr-wrapper">
+            <img src="/img/bagr.svg" alt="Bagr" className="bagr-second-section" />
+          </div>
 
-    {/* Bílý kruh s číslem 1 na správném okně */}
-    <div className="okno-kruh">
-      <span>1</span>
-    </div>
+          <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
+          <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
+          <div className="okno-zvyrazneni">
+            <span>OKNA</span>
+          </div>
+          <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
+          <div className="okno-zvyrazneni">
+            <span>OKNA</span>
+          </div>
+          <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
 
-    {/* Zvýraznění okna při najetí na "Okna" v navigační liště */}
-    <div className="okno-zvyrazneni"></div>
-  </div>
-</section>
+          {/* Bílé číslo 1 na okně */}
+          <div className="okno-kruh">
+            <span>1</span>
+          </div>
 
-
-
-
-
+          {/* Oranžový kruh s textem "OKNA" */}
+          <div className="okno-zvyrazneni">
+            <span>OKNA</span>
+          </div>
+        </div>
+      </section>
 
       {/* Třetí sekce */}
       <section id="companies" className="section company-list">

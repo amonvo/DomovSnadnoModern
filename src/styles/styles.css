@@ -1,5 +1,6 @@
 /* Základní styl stránky */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -9,7 +10,8 @@ body, html {
 
 /* Styl navigační lišty */
 header {
-    background: transparent; /* Průhledné pozadí */
+    background: transparent;
+    /* Průhledné pozadí */
     color: black;
     padding: 0;
     margin: 0;
@@ -30,15 +32,18 @@ header {
     padding: 20px 0;
     margin: 0;
     font-size: 1.4rem;
-    background: transparent; /* Zajistí průhlednost */
+    background: transparent;
+    /* Zajistí průhlednost */
 }
 
 .navbar li {
     display: flex;
     align-items: center;
     font-weight: bold;
-    color: #000; /* Černá barva textu */
-    margin: 0 15px; /* Prostor mezi položkami */
+    color: #000;
+    /* Černá barva textu */
+    margin: 0 15px;
+    /* Prostor mezi položkami */
     position: relative;
 }
 
@@ -50,12 +55,15 @@ header {
     justify-content: center;
     width: 32px;
     height: 32px;
-    border: 2px solid #ff5722; /* Oranžový rámeček */
+    border: 2px solid #ff5722;
+    /* Oranžový rámeček */
     border-radius: 50%;
     font-size: 1rem;
     font-weight: bold;
-    color: #ff5722; /* Stejná oranžová barva */
-    margin-right: 10px; /* Mezera mezi číslem a textem */
+    color: #ff5722;
+    /* Stejná oranžová barva */
+    margin-right: 10px;
+    /* Mezera mezi číslem a textem */
 }
 
 /* Odkazy v navigaci */
@@ -66,7 +74,8 @@ header {
 }
 
 .navbar a:hover {
-    color: #ff5722; /* Oranžová barva při hoveru */
+    color: #ff5722;
+    /* Oranžová barva při hoveru */
 }
 
 
@@ -76,7 +85,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: transparent; /* Průhledné pozadí */
+    background: transparent;
+    /* Průhledné pozadí */
     text-align: center;
     z-index: 1000;
     padding: 15px 0;
@@ -102,12 +112,14 @@ header {
     color: black;
     margin: 0 15px;
     position: relative;
-    transition: color 0.3s ease; /* Plynulý přechod barvy */
+    transition: color 0.3s ease;
+    /* Plynulý přechod barvy */
 }
 
 /* Efekt při najetí myší */
 .section-navbar .navbar li:hover {
-    color: #ff5722; /* Oranžová barva textu */
+    color: #ff5722;
+    /* Oranžová barva textu */
 }
 
 /* Zvýraznění textu při najetí */
@@ -116,38 +128,6 @@ header {
     color: #ff5722;
 }
 
-/* Zachování stylu kruhového čísla */
-.section-navbar .navbar li::before {
-    content: attr(data-number);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border: 2px solid #ff5722;
-    border-radius: 50%;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ff5722;
-    margin-right: 10px;
-}
-
-
-/* Číselné bubliny */
-.section-navbar .navbar li::before {
-    content: attr(data-number);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border: 2px solid #ff5722;
-    border-radius: 50%;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ff5722;
-    margin-right: 10px;
-}
 
 /* Odkazy */
 .section-navbar .navbar a {
@@ -198,14 +178,17 @@ header {
     left: 24%;
     transform: translate(-50%, -50%);
     text-align: left;
-    color: #fff; /* Změní barvu textu na bílou */
-    z-index: 2; /* Před překrytím mlhy */
+    color: #fff;
+    /* Změní barvu textu na bílou */
+    z-index: 2;
+    /* Před překrytím mlhy */
 }
 
 .fog-overlay {
     position: absolute;
     top: -10px;
-    left: -700px; /* Posunuto více doleva */
+    left: -700px;
+    /* Posunuto více doleva */
     width: 160%;
     height: 110%;
     z-index: 1;
@@ -218,11 +201,13 @@ header {
 }
 
 .center-content h1 {
-    font-size: 6rem; /* Velikost textu, kterou jste nastavili */
+    font-size: 6rem;
+    /* Velikost textu, kterou jste nastavili */
     font-weight: bold;
     margin: 0;
     line-height: 1.2;
-    color: #fff; /* Pokud chcete text bílý */
+    color: #fff;
+    /* Pokud chcete text bílý */
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -245,8 +230,10 @@ header {
 
 .center-content .button:hover {
     background-color: #555;
-    transform: scale(1.1); /* Jemné zvětšení při najetí */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Přidání stínu pro zvýraznění */
+    transform: scale(1.1);
+    /* Jemné zvětšení při najetí */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* Přidání stínu pro zvýraznění */
 }
 
 
@@ -295,8 +282,10 @@ header {
 /* Bílé číslo 1 na okně */
 .okno-label {
     position: absolute;
-    left: 54%; /* Upravit dle potřeby */
-    bottom: 24%; /* Upravit dle potřeby */
+    left: 54%;
+    /* Upravit dle potřeby */
+    bottom: 24%;
+    /* Upravit dle potřeby */
     width: 40px;
     height: 40px;
     background: white;
@@ -310,13 +299,160 @@ header {
     justify-content: center;
 }
 
-/* Bílé číslo 1 na okně - vycentrování */
+/* Oranžový kruh s textem "OKNA" */
 .okno-kruh {
     position: absolute;
-    top: 50%; /* Posunutí do středu */
+    top: 55%; /* Uprav pozici */
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40px;
+    width: 45px;
+    height: 40px;
+    background-color: white;
+    border: 3px solid #ff5722;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5722;
+    z-index: 10; /* Pod oranžovým kruhem */
+}
+
+.okno-zvyrazneni {
+    position: absolute;
+    top: 55%; /* Stejné jako číslo */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1000; /* Nad číslem */
+}
+
+/* Zobrazení oranžového kruhu při najetí na číslo "1" */
+.okno-kruh:hover+.okno-zvyrazneni {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+/* Překrývající čtverec */
+.okno-ctverec {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 11;
+    /* Nad kruhem */
+}
+
+/* Umožňuje, aby kruh a čtverec zůstaly viditelné i při přejetí na ně
+.svg-container2:hover .okno-zvyrazneni,
+.svg-container2:hover .okno-ctverec {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+} */
+
+
+/* Zobrazení oranžového kruhu při najetí na položku "Okna" v navigaci */
+.navbar li[data-number="1"]:hover~.svg-container2 .okno-zvyrazneni {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Navigační lišta ve druhé sekci */
+.section-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+/* Styl navigačních položek */
+.section-navbar .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    background: transparent;
+}
+
+/* Styl jednotlivých položek v navigaci */
+.section-navbar .navbar li {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: black;
+    margin: 0 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efekt při hoveru na navigaci */
+.section-navbar .navbar li:hover {
+    color: #ff5722;
+}
+
+/* Zvýraznění textu při hoveru */
+.section-navbar .navbar li:hover span {
+    font-weight: bold;
+    color: #ff5722;
+}
+
+/* Číselné bubliny v navigaci */
+.section-navbar .navbar li::before {
+    content: attr(data-number);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #ff5722;
+    border-radius: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff5722;
+    margin-right: 10px;
+}
+
+/* Odkazy v navigaci */
+.section-navbar .navbar a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.section-navbar .navbar a:hover {
+    color: #ff5722;
+}
+
+/* Bílé číslo 1 na okně */
+.okno-kruh {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
     height: 40px;
     background-color: white;
     border: 3px solid #ff5722;
@@ -330,44 +466,84 @@ header {
     z-index: 10;
 }
 
-/* Bílé číslo 1 na okně - upravená pozice */
-.okno-kruh {
+/* Oranžový kruh s textem "OKNA" */
+.okno-zvyrazneni {
     position: absolute;
-    top: 58%; /* Stejné místo */
-    left: 48%;
+    top: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.okno-zvyrazneni.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+
+/* ✅ Efekt pro navigaci */
+.section-navbar .navbar li[data-number="1"]:hover ~ .okno-zvyrazneni {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-10px); /* Posune efekt více nahoru */
+}
+
+/* Efekt na číslo 1 při hoveru na tlačítko "Okna" */
+.section-navbar .navbar li[data-number="1"]:hover ~ .okno-kruh {
+    background-color: #ff5722;
+    color: white;
+}
+
+
+/* Kontejner pro zvýraznění okna */
+.okno-highlight {
+    position: absolute;
+    left: 60%;
+    /* Upravená pozice pro vycentrování na okně */
+    top: 49%;
+    /* Posunuto níže pro lepší zarovnání */
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+/* Bílý kruh s číslem */
+.okno-circle {
+    width: 42px;
+    height: 42px;
     background-color: white;
     border: 3px solid #ff5722;
     border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff5722;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: #ff5722;
-    z-index: 20; /* VYŠŠÍ než okno-zvyrazneni! */
-}
-
-/* Výchozí stav překrytí okna */
-.okno-zvyrazneni {
     position: absolute;
-    top: 58%; /* Stále vycentrované */
-    left: 48%;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    width: 120px; /* Zvýšená velikost */
-    height: 120px;
-    background-color: rgba(255, 87, 34, 1); /* 100% sytá oranžová */
-    display: none;
-    z-index: 11; /* Zvýšení vrstvy nad číslem */
-    transition: opacity 0.3s ease-in-out;
 }
 
-/* Aktivace překrytí při najetí na číslo 1 v navigaci */
-.navbar li[data-number="1"]:hover ~ .okno-zvyrazneni {
-    display: block; /* Plné zobrazení */
+/* Zvýraznění při hoveru na navigační položku */
+.navbar li:nth-child(1):hover~.svg-container2 .okno-highlight {
+    display: block;
+}
+
+/* 💥 Toto spustí efekt pouze při najetí na tlačítko "Okna" */
+.navbar li:nth-child(1):hover + .okno-zvyrazneni {
     opacity: 1;
+    visibility: visible;
 }
 
 /* Pulzující efekt */
@@ -376,6 +552,7 @@ header {
         transform: translate(-50%, -50%) scale(1);
         box-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
     }
+
     100% {
         transform: translate(-50%, -50%) scale(1.05);
         box-shadow: 0 0 100px rgba(255, 0, 0, 1);
@@ -383,22 +560,11 @@ header {
 }
 
 
-/* Efekt při najetí na "Okna" v navigační liště */
-.okno-zvyrazneni.visible {
-    display: block;
-}
-
-
-
-
 /* Efekt na číslo 1 při najetí */
-.navbar li[data-number="1"]:hover ~ .okno-kruh {
+.navbar li[data-number="1"]:hover~.okno-kruh {
     background-color: #ff5722;
     color: white;
 }
-
-
-
 
 .solary {
     position: absolute;
@@ -419,62 +585,7 @@ header {
     height: auto;
 }
 
-/* Styl pro strom-wrapper */
-.strom-wrapper {
-    position: absolute;
-    left: 10%;
-    bottom: 10%;
-    width: 600px; /* Stejná šířka jako strom */
-    height: auto;
-    cursor: pointer;
-}
 
-/* Ujistěte se, že strom uvnitř strom-wrapper zabírá celou šířku */
-.strom-wrapper .strom {
-    width: 100%;
-    height: auto;
-}
-
-/* Styl pro strom-vizitka */
-.strom-wrapper .strom-vizitka {
-    position: absolute;
-    bottom: 120px;
-    left: 230%;
-    transform: translateX(-50%);
-    opacity: 0;
-    visibility: hidden;
-    width: 600px;
-    height: auto;
-    z-index: 10;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border: 2px solid #ddd;
-    background-color: #fff;
-    padding: 15px;
-    animation: none;
-    pointer-events: none;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-/* Zobrazení vizitky při najetí myší na strom-wrapper */
-.strom-wrapper:hover .strom-vizitka {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    animation: fadeIn 0.5s;
-    transition-delay: 0s;
-}
-
-.strom-wrapper:not(:hover) .strom-vizitka {
-    transition-delay: 1s;
-}
-
-/* Efekt při najetí myší na vizitku */
-.strom-vizitka:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-}
 
 /* Styl pro první sekci */
 .bagr-first-section {
@@ -484,7 +595,6 @@ header {
     width: 500px;
     height: auto;
 }
-
 
 /* Styl pro druhou sekci */
 .bagr-second-section {
@@ -499,34 +609,53 @@ header {
 .bagr-wrapper .bagr-vizitka {
     position: absolute;
     bottom: 120px;
-    left: 20%; /* Posun vizitky více doleva */
+    left: 20%;
+    /* Posun vizitky více doleva */
     transform: translateX(-50%);
-    opacity: 0; /* Skrytí vizitky na začátku */
-    visibility: hidden; /* Zabránění interakcím s vizitkou, když není vidět */
-    width: 600px; /* Velikost vizitky */
+    opacity: 0;
+    /* Skrytí vizitky na začátku */
+    visibility: hidden;
+    /* Zabránění interakcím s vizitkou, když není vidět */
+    width: 600px;
+    /* Velikost vizitky */
     height: auto;
     z-index: 10;
-    border-radius: 20px; /* Zaoblené rohy */
-    overflow: hidden; /* Skrytí obsahu přesahujícího vizitku */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Jemný stín */
-    border: 2px solid #ddd; /* Světlý okraj */
-    background-color: #fff; /* Bílý podklad */
-    padding: 15px; /* Vnitřní odsazení */
-    animation: none; /* Animace se přidá dynamicky */
-    pointer-events: none; /* Zabrání posunu při pohybu myši */
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Plynulé zobrazení a skrytí */
+    border-radius: 20px;
+    /* Zaoblené rohy */
+    overflow: hidden;
+    /* Skrytí obsahu přesahujícího vizitku */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Jemný stín */
+    border: 2px solid #ddd;
+    /* Světlý okraj */
+    background-color: #fff;
+    /* Bílý podklad */
+    padding: 15px;
+    /* Vnitřní odsazení */
+    animation: none;
+    /* Animace se přidá dynamicky */
+    pointer-events: none;
+    /* Zabrání posunu při pohybu myši */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    /* Plynulé zobrazení a skrytí */
 }
 
 .bagr-wrapper:hover .bagr-vizitka {
-    opacity: 1; /* Zobrazení vizitky */
-    visibility: visible; /* Zajištění interakce */
-    pointer-events: auto; /* Povolení interakcí, když je vizitka viditelná */
-    animation: fadeIn 0.5s; /* Použití animace při zobrazení */
-    transition-delay: 0s; /* Bez zpoždění při zobrazení */
+    opacity: 1;
+    /* Zobrazení vizitky */
+    visibility: visible;
+    /* Zajištění interakce */
+    pointer-events: auto;
+    /* Povolení interakcí, když je vizitka viditelná */
+    animation: fadeIn 0.5s;
+    /* Použití animace při zobrazení */
+    transition-delay: 0s;
+    /* Bez zpoždění při zobrazení */
 }
 
 .bagr-wrapper:not(:hover) .bagr-vizitka {
-    transition-delay: 1s; /* Zpoždění skrytí vizitky po odjetí myší */
+    transition-delay: 1s;
+    /* Zpoždění skrytí vizitky po odjetí myší */
 }
 
 .bagr-vizitka:hover {
@@ -567,8 +696,10 @@ header {
 }
 
 .bagr-wrapper:hover .bagr-vizitka {
-    display: block; /* Zobrazení vizitky při najetí myší na bagr */
-    animation: fadeIn 0.5s ease-in-out; /* Přidání animačního efektu */
+    display: block;
+    /* Zobrazení vizitky při najetí myší na bagr */
+    animation: fadeIn 0.5s ease-in-out;
+    /* Přidání animačního efektu */
 }
 
 
@@ -811,13 +942,6 @@ header {
     color: #fff;
 }
 
-.projects-item hr {
-    width: 30px;
-    /* Délka čáry */
-    height: 2px;
-    background-color: #fff;
-    margin: 0;
-}
 
 .projects-item p {
     margin: 0;
@@ -837,16 +961,7 @@ header {
     margin: 0;
 }
 
-/* Styl pro sekci Realizace */
-.projects-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    /* Zvýšené horní odsazení pro celkový posun sekce */
-    text-align: center;
-    background-color: #333;
-}
+
 
 .realizations-heading {
     font-size: 3rem;
@@ -906,7 +1021,8 @@ header {
     background-color: #333;
     color: #fff;
     padding: 50px 20px;
-    text-align: center; /* Zarovná text do středu */
+    text-align: center;
+    /* Zarovná text do středu */
 }
 
 .contact-container {
@@ -915,11 +1031,14 @@ header {
 }
 
 .contact-image {
-    width: 100%; /* Zabere celou šířku sekce */
+    width: 100%;
+    /* Zabere celou šířku sekce */
     height: auto;
     border-radius: 10px;
-    margin-bottom: 30px; /* Odstup mezi obrázkem a textem */
-    object-fit: cover; /* Přizpůsobí obsah pro plné zobrazení bez deformace */
+    margin-bottom: 30px;
+    /* Odstup mezi obrázkem a textem */
+    object-fit: cover;
+    /* Přizpůsobí obsah pro plné zobrazení bez deformace */
 }
 
 .contact-info {
@@ -927,20 +1046,23 @@ header {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Horizontální zarovnání na střed */
+    align-items: center;
+    /* Horizontální zarovnání na střed */
     text-align: center;
 }
 
 .contact-heading {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    text-align: center; /* Zarovnání nadpisu na střed */
+    text-align: center;
+    /* Zarovnání nadpisu na střed */
 }
 
 .contact-details {
     font-size: 1.1rem;
     margin-bottom: 20px;
-    text-align: center; /* Zarovnání kontaktních informací na střed */
+    text-align: center;
+    /* Zarovnání kontaktních informací na střed */
 }
 
 .social-icons {
@@ -951,24 +1073,28 @@ header {
 }
 
 .social-icon {
-    width: 32px; /* Nastavení velikosti ikony */
+    width: 32px;
+    /* Nastavení velikosti ikony */
     height: 32px;
     transition: transform 0.3s ease;
 }
 
 .social-icons img {
-    width: 32px; /* Základní velikost pro všechny ikony */
+    width: 32px;
+    /* Základní velikost pro všechny ikony */
     height: 32px;
     margin: 0 10px;
     transition: transform 0.3s;
 }
 
 .social-icon:hover {
-    transform: scale(1.2); /* Jemné zvětšení při najetí myší */
+    transform: scale(1.2);
+    /* Jemné zvětšení při najetí myší */
 }
 
 .twitter-icon {
-    width: 24px; /* Výraznější zmenšení pro Twitter ikonu */
+    width: 24px;
+    /* Výraznější zmenšení pro Twitter ikonu */
     height: 24px;
 }
 
@@ -978,25 +1104,30 @@ header {
     bottom: 20px;
     right: 20px;
     z-index: 100;
-    background-color: transparent; /* Odstraní pozadí */
+    background-color: transparent;
+    /* Odstraní pozadí */
     border: none;
-    padding: 0; /* Žádný padding kolem ikony */
+    padding: 0;
+    /* Žádný padding kolem ikony */
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 #scrollToTopBtn img {
-    width: 120px; /* Zvýšená velikost pro lepší viditelnost */
+    width: 120px;
+    /* Zvýšená velikost pro lepší viditelnost */
     height: 120px;
     transition: transform 0.3s ease;
 }
 
 #scrollToTopBtn.visible {
-    display: block; /* Zobrazí tlačítko */
+    display: block;
+    /* Zobrazí tlačítko */
 }
 
 #scrollToTopBtn:hover img {
-    transform: scale(1.2); /* Jemné zvětšení při najetí myší */
+    transform: scale(1.2);
+    /* Jemné zvětšení při najetí myší */
 }
 
 #scrollToTopBtn img {
