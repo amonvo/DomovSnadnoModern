@@ -106,71 +106,135 @@ const IndexPage = () => {
       </Layout>
 
       <section id="second-section" className="section background-section">
-        {/* Navigační lišta ve druhé sekci */}
-        <header className="section-navbar">
-          <ul className="navbar">
-            <li
-              data-number="1"
-              onMouseEnter={() => {
-                document.querySelectorAll(".okno-zvyrazneni").forEach(el => {
-                  el.classList.add("visible");
-                });
-              }}
-              onMouseLeave={() => {
-                document.querySelectorAll(".okno-zvyrazneni").forEach(el => {
-                  el.classList.remove("visible");
-                });
-              }}
-            >
-              <span>Okna</span>
-            </li>
+  {/* Navigační lišta ve druhé sekci */}
+  <header className="section-navbar">
+    <ul className="navbar">
+      {/* 1. Okna */}
+      <li
+        data-number="1"
+        onMouseEnter={() => {
+          document.querySelectorAll(".okno-zvyrazneni").forEach(el => {
+            el.classList.add("visible");
+          });
+        }}
+        onMouseLeave={() => {
+          document.querySelectorAll(".okno-zvyrazneni").forEach(el => {
+            el.classList.remove("visible");
+          });
+        }}
+      >
+        <span>Okna</span>
+      </li>
 
-            <li data-number="2"><span>Dveře</span></li>
-            <li data-number="3"><span>Garážová vrata</span></li>
-            <li data-number="4"><span>Stínící technika</span></li>
-            <li data-number="5"><span>Pergoly</span></li>
-            <li data-number="6"><span>Automatizace domácnosti</span></li>
-            <li data-number="7"><span>Ostatní</span></li>
-          </ul>
-        </header>
+      {/* 2. Dveře */}
+      <li
+        data-number="2"
+        onMouseEnter={() => {
+          document.querySelectorAll(".dvere-zvyrazneni").forEach(el => {
+            el.classList.add("visible");
+          });
+        }}
+        onMouseLeave={() => {
+          document.querySelectorAll(".dvere-zvyrazneni").forEach(el => {
+            el.classList.remove("visible");
+          });
+        }}
+      >
+        <span>Dveře</span>
+      </li>
 
-        {/* Druhá sekce s pozadím */}
-        <div className="svg-container2">
-          <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
-          <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
+      {/* 3. Kamenictví */}
+      <li
+        data-number="3"
+        onMouseEnter={() => {
+          document.querySelectorAll(".kameni-zvyrazneni").forEach(el => {
+            el.classList.add("visible");
+          });
+        }}
+        onMouseLeave={() => {
+          document.querySelectorAll(".kameni-zvyrazneni").forEach(el => {
+            el.classList.remove("visible");
+          });
+        }}
+      >
+        <span>Kamenictví</span>
+      </li>
 
-          {/* Obal kolem stromku a vizitky */}
-          <div className="strom-wrapper">
-            <img src="/img/strom.svg" alt="Strom" className="strom" />
-          </div>
+      {/* 4. Střechy */}
+      <li
+        data-number="4"
+        onMouseEnter={() => {
+          document.querySelectorAll(".strecha-zvyrazneni").forEach(el => {
+            el.classList.add("visible");
+          });
+        }}
+        onMouseLeave={() => {
+          document.querySelectorAll(".strecha-zvyrazneni").forEach(el => {
+            el.classList.remove("visible");
+          });
+        }}
+      >
+        <span>Střechy</span>
+      </li>
 
-          {/* Obal kolem bagru a vizitky */}
-          <div className="bagr-wrapper">
-            <img src="/img/bagr.svg" alt="Bagr" className="bagr-second-section" />
-          </div>
+      <li data-number="5"><span>Pergoly</span></li>
+      <li data-number="6"><span>Automatizace domácnosti</span></li>
+      <li data-number="7"><span>Ostatní</span></li>
+    </ul>
+  </header>
 
-          <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
-          <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
-          <div className="okno-zvyrazneni">
-            <span>OKNA</span>
-          </div>
-          <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
-          <div className="okno-zvyrazneni">
-            <span>OKNA</span>
-          </div>
-          <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
+  {/* SVG pozadí a prvky domku */}
+  <div className="svg-container2">
+    <img src="/img/Domek-Final.svg" alt="Domek" className="domek" />
+    <img src="/img/SolaryNew.png" alt="Solary" className="solary" />
 
-          {/* Bílé číslo 1 na okně */}
-          <div className="okno-kruh">
-            <span>1</span>
-          </div>
+    <div className="strom-wrapper">
+      <img src="/img/strom.svg" alt="Strom" className="strom" />
+    </div>
 
-          {/* Oranžový kruh s textem "OKNA" */}
-          <div className="okno-zvyrazneni">
-            <span>OKNA</span>
-          </div>
-        </div>
-      </section>
+    <div className="bagr-wrapper">
+      <img src="/img/bagr.svg" alt="Bagr" className="bagr-second-section" />
+    </div>
+
+    <img src="/img/kameny.svg" alt="Kameny" className="kameny" />
+    <img src="/img/okno1.svg" alt="Okno1" className="okno1" />
+    <div className="okno-zvyrazneni">
+      <span>OKNA</span>
+    </div>
+    <img src="/img/okno2.svg" alt="Okno2" className="okno2" />
+    <div className="okno-zvyrazneni">
+      <span>OKNA</span>
+    </div>
+    <img src="/img/dollar.svg" alt="Dollar" className="dollar" />
+
+    {/* Zvýrazňovací overlay prvky – při najetí myší se zobrazí text */}
+    <div className="dvere-zvyrazneni">
+      <span>DVEŘE</span>
+    </div>
+    <div className="kameni-zvyrazneni">
+      <span>KAMENÍ</span>
+    </div>
+    <div className="strecha-zvyrazneni">
+      <span>STŘECHY</span>
+    </div>
+
+    {/* Defaultní čísla – kruhy, které se překryjí overlay efektem při hoveru */}
+    <div className="okno-kruh">
+      <span>1</span>
+    </div>
+    <div className="dvere-kruh">
+      <span>2</span>
+    </div>
+    <div className="kameni-kruh">
+      <span>3</span>
+    </div>
+    <div className="strecha-kruh">
+      <span>4</span>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Třetí sekce */}
       <section id="companies" className="section company-list">

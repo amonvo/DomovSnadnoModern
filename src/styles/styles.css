@@ -302,8 +302,10 @@ header {
 /* Oranžový kruh s textem "OKNA" */
 .okno-kruh {
     position: absolute;
-    top: 55%; /* Uprav pozici */
-    left: 50%;
+    top: 57%;
+    /* doladit dle umístění okna */
+    left: 48%;
+    /* doladit dle umístění okna */
     transform: translate(-50%, -50%);
     width: 45px;
     height: 40px;
@@ -316,12 +318,74 @@ header {
     font-size: 18px;
     font-weight: bold;
     color: #ff5722;
-    z-index: 10; /* Pod oranžovým kruhem */
+    z-index: 10;
 }
+
+.dvere-kruh {
+    position: absolute;
+    /* Doladit umístění podle designu dveří */
+    left: 56%;
+    top: 60%;
+    width: 45px;
+    height: 40px;
+    background-color: white;
+    border: 3px solid #ff5722;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5722;
+    z-index: 10;
+}
+
+
+/* Kamenictví */
+.kameni-kruh {
+    position: absolute;
+    /* Doladit umístění podle pozice kamenů */
+    left: 59%;
+    top: 79%;
+    width: 45px;
+    height: 40px;
+    background-color: white;
+    border: 3px solid #ff5722;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5722;
+    z-index: 10;
+}
+
+/* Střechy */
+.strecha-kruh {
+    position: absolute;
+    /* Doladit umístění podle pozice střechy */
+    left: 40%;
+    top: 30%;
+    width: 45px;
+    height: 40px;
+    background-color: white;
+    border: 3px solid #ff5722;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff5722;
+    z-index: 10;
+}
+
 
 .okno-zvyrazneni {
     position: absolute;
-    top: 55%; /* Stejné jako číslo */
+    top: 55%;
+    /* Stejné jako číslo */
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: orange;
@@ -334,7 +398,8 @@ header {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    z-index: 1000; /* Nad číslem */
+    z-index: 1000;
+    /* Nad číslem */
 }
 
 /* Zobrazení oranžového kruhu při najetí na číslo "1" */
@@ -365,6 +430,59 @@ header {
     visibility: visible;
     pointer-events: auto;
 } */
+
+/* Zvýrazňovací prvky pro DVEŘE, KAMENÍ a STŘECHY */
+.dvere-zvyrazneni,
+.kameni-zvyrazneni,
+.strecha-zvyrazneni {
+    position: absolute;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.dvere-zvyrazneni.visible,
+.kameni-zvyrazneni.visible,
+.strecha-zvyrazneni.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Umístění zvýrazňovacích prvků – uprav hodnoty dle vzhledu domku */
+.dvere-zvyrazneni {
+    left: 55%;
+    /* nastav podle pozice dveří */
+    top: 60%;
+    /* nastav podle pozice dveří */
+}
+
+.kameni-zvyrazneni {
+    left: 59%;
+    /* nastav podle pozice kamenictví (kamení) */
+    top: 79%;
+    /* nastav podle pozice kamenictví */
+}
+
+.strecha-zvyrazneni {
+    left: 40%;
+    /* nastav podle pozice střechy */
+    top: 30%;
+    /* nastav podle pozice střechy */
+}
+
+/* Úprava pozice čísla u okna – posunuto více doleva */
+.okno-kruh {
+    left: 40%;
+    /* dříve bylo 50%; upraveno dle potřeby */
+}
 
 
 /* Zobrazení oranžového kruhu při najetí na položku "Okna" v navigaci */
@@ -449,8 +567,8 @@ header {
 /* Bílé číslo 1 na okně */
 .okno-kruh {
     position: absolute;
-    top: 55%;
-    left: 50%;
+    top: 57%;
+    left: 48%;
     transform: translate(-50%, -50%);
     width: 45px;
     height: 40px;
@@ -469,8 +587,8 @@ header {
 /* Oranžový kruh s textem "OKNA" */
 .okno-zvyrazneni {
     position: absolute;
-    top: 55%;
-    left: 50%;
+    top: 57%;
+    left: 48%;
     transform: translate(-50%, -50%);
     background-color: orange;
     color: white;
@@ -488,18 +606,19 @@ header {
 .okno-zvyrazneni.visible {
     opacity: 1;
     visibility: visible;
-  }
-  
+}
+
 
 /* ✅ Efekt pro navigaci */
-.section-navbar .navbar li[data-number="1"]:hover ~ .okno-zvyrazneni {
+.section-navbar .navbar li[data-number="1"]:hover~.okno-zvyrazneni {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-10px); /* Posune efekt více nahoru */
+    transform: translateY(-10px);
+    /* Posune efekt více nahoru */
 }
 
 /* Efekt na číslo 1 při hoveru na tlačítko "Okna" */
-.section-navbar .navbar li[data-number="1"]:hover ~ .okno-kruh {
+.section-navbar .navbar li[data-number="1"]:hover~.okno-kruh {
     background-color: #ff5722;
     color: white;
 }
@@ -541,7 +660,7 @@ header {
 }
 
 /* 💥 Toto spustí efekt pouze při najetí na tlačítko "Okna" */
-.navbar li:nth-child(1):hover + .okno-zvyrazneni {
+.navbar li:nth-child(1):hover+.okno-zvyrazneni {
     opacity: 1;
     visibility: visible;
 }
